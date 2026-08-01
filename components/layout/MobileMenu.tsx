@@ -37,7 +37,7 @@ export default function MobileMenu() {
             className="glass-panel absolute inset-x-3 top-[5.1rem] rounded-[32px] p-5 shadow-[0_24px_80px_rgba(18,40,30,0.14)]"
             exit={{ opacity: 0, y: -16 }}
             initial={{ opacity: 0, y: -16 }}
-            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] as const }}
           >
             <div className="flex flex-col gap-3">
               {navItems.map((item) => (

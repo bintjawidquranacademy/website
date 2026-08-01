@@ -12,7 +12,7 @@ export default function CTA() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as const }}
           className="relative overflow-hidden rounded-[32px] bg-[#0F4C3A] border-2 border-[#D4AF37]/60 text-white p-8 sm:p-12 md:p-16 shadow-[0_30px_70px_rgba(15,76,58,0.25)] text-center"
         >
           {/* Subtle Islamic Geometric Pattern Overlay */}

@@ -81,7 +81,7 @@ export default function Hero() {
           <motion.div
             animate={{ opacity: 1, x: 0 }}
             initial={reduceMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: -26 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as const }}
           >
             <div className="max-w-[36rem]">
               <div className="inline-flex items-center gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.34em] text-[#8b6a32]">
@@ -133,7 +133,7 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             className="relative hidden min-h-[28rem] items-center justify-center lg:flex"
             initial={reduceMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: 26 }}
-            transition={{ duration: 0.85, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.85, delay: 0.08, ease: [0.22, 1, 0.36, 1] as const }}
           >
             <div className="relative h-[28rem] w-80">
               <div className="absolute inset-0 rounded-t-[10rem] border border-[#c29b62]/35 bg-white/18 shadow-[0_24px_60px_rgba(21,37,29,0.12)] backdrop-blur-sm" />
@@ -194,7 +194,7 @@ export default function Hero() {
                   transition={{
                     duration: 0.55,
                     delay: 0.08 * index,
-                    ease: [0.22, 1, 0.36, 1],
+                    ease: [0.22, 1, 0.36, 1] as const,
                   }}
                 >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#c29b62] text-[#c29b62]">

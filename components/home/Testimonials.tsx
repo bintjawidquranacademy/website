@@ -89,7 +89,7 @@ export default function Testimonials() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
             className="max-w-2xl"
           >
             <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] text-[#D4AF37] bg-[#D4AF37]/15 px-4 py-1.5 rounded-full border border-[#D4AF37]/30">
@@ -132,7 +132,7 @@ export default function Testimonials() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] as const }}
               className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
             >
               {visibleTestimonials.map((item, idx) => (

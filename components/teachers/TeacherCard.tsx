@@ -16,7 +16,7 @@ export default function TeacherCard({ teacher, index = 0 }: TeacherCardProps) {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.7, delay: 0.08 * index, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.7, delay: 0.08 * index, ease: [0.22, 1, 0.36, 1] as const }}
       className="group relative flex h-full flex-col overflow-hidden rounded-[28px] border border-[rgba(15,77,58,0.08)] bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(255,252,245,0.65))] shadow-[0_20px_60px_rgba(20,40,30,0.08)] backdrop-blur-md transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_28px_80px_rgba(20,40,30,0.14)] hover:border-[rgba(200,155,60,0.3)]"
     >
       {/* Top gold accent line */}

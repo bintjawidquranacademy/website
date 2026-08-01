@@ -33,7 +33,7 @@ export default function ResourceQuickLinks({ resources }: ResourceQuickLinksProp
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-30px" }}
-              transition={{ duration: 0.4, delay: 0.04 * i, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.4, delay: 0.04 * i, ease: [0.22, 1, 0.36, 1] as const }}
             >
               <Link
                 className="group flex items-center gap-3 rounded-[16px] border border-[var(--line)] bg-white/80 px-5 py-4 text-[var(--ink)] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#C9A227]/40 hover:bg-white hover:shadow-md"

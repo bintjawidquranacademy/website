@@ -34,7 +34,7 @@ export default function WhyChoose() {
         <motion.div
           className="mx-auto max-w-3xl text-center"
           initial={{ opacity: 0, y: 24 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
           viewport={{ once: true, margin: "-80px" }}
           whileInView={{ opacity: 1, y: 0 }}
         >
@@ -58,7 +58,7 @@ export default function WhyChoose() {
                 transition={{
                   duration: 0.55,
                   delay: index * 0.08,
-                  ease: [0.22, 1, 0.36, 1],
+                  ease: [0.22, 1, 0.36, 1] as const,
                 }}
                 viewport={{ once: true, margin: "-80px" }}
                 whileHover={{ y: -8, scale: 1.01 }}
