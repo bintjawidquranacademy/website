@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "noorani-qaidah",
+    "title": "Noorani Qaidah",
+    "summary": "A gentle beginner pathway that teaches Arabic letters, pronunciation, and first Tajweed foundations.",
+    "duration": "12 to 16 weeks, 30 minute sessions",
+    "level": "Beginner",
+    "image": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=editorial%20photograph%20of%20a%20young%20student%20learning%20Arabic%20letters%20with%20a%20Quran%20teacher%2C%20warm%20natural%20light%2C%20premium%20Islamic%20education%20website%2C%20soft%20green%20and%20gold%20tones&image_size=landscape_16_9",
+    "audience": "Children and absolute beginners starting Quran reading.",
+    "curriculum": [
+      "Arabic alphabet recognition",
+      "Makharij and pronunciation drills",
+      "Joining letters and reading practice",
+      "Short surah readiness"
+    ]
+  },
+  {
+    "slug": "tajweed",
+    "title": "Tajweed",
+    "summary": "Structured one-to-one lessons focused on correct recitation, rhythm, and confidence in reading the Quran beautifully.",
+    "duration": "Ongoing, 30 to 45 minute sessions",
+    "level": "Beginner to advanced",
+    "image": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=editorial%20portrait%20of%20an%20online%20Quran%20teacher%20teaching%20tajweed%20on%20a%20laptop%2C%20luxury%20educational%20website%20style%2C%20refined%20green%20studio%20lighting&image_size=landscape_16_9",
+    "audience": "Students who can read but want to improve fluency and rules.",
+    "curriculum": [
+      "Makharij and sifaat review",
+      "Noon sakinah and meem sakinah rules",
+      "Madd and stopping rules",
+      "Applied recitation correction"
+    ]
+  },
+  {
+    "slug": "hifz",
+    "title": "Hifz (Quran Memorization)",
+    "summary": "A consistent memorization track with daily targets, revision routines, and parent progress visibility.",
+    "duration": "Ongoing, 45 to 60 minute sessions",
+    "level": "All levels",
+    "image": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=serene%20editorial%20scene%20of%20a%20student%20memorizing%20Quran%20at%20a%20desk%2C%20soft%20sunlight%2C%20premium%20Islamic%20academy%20branding%2C%20books%20and%20calligraphy&image_size=landscape_16_9",
+    "audience": "Students seeking a disciplined memorization journey with accountability.",
+    "curriculum": [
+      "Daily sabaq planning",
+      "Revision and retention framework",
+      "Tajweed integration during memorization",
+      "Monthly progress tracking"
+    ]
+  },
+  {
+    "slug": "islamic-studies",
+    "title": "Islamic Studies",
+    "summary": "A balanced program covering beliefs, character, worship, prophetic stories, and practical Muslim living.",
+    "duration": "Ongoing, 30 to 45 minute sessions",
+    "level": "Children and teens",
+    "image": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=warm%20classroom%20editorial%20image%20of%20children%20studying%20Islamic%20studies%20with%20books%20and%20calligraphy%20details%2C%20premium%20family-friendly%20website%20visual&image_size=landscape_16_9",
+    "audience": "Families who want age-appropriate Islamic knowledge beyond recitation.",
+    "curriculum": [
+      "Aqeedah essentials",
+      "Salah, adab, and daily duas",
+      "Seerah and prophetic stories",
+      "Character development"
+    ]
+  },
+  {
+    "slug": "arabic-language",
+    "title": "Arabic Language",
+    "summary": "Practical Arabic lessons that build vocabulary, reading ability, and foundational grammar for Quran understanding.",
+    "duration": "Ongoing, 45 minute sessions",
+    "level": "Beginner to intermediate",
+    "image": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=elegant%20editorial%20workspace%20with%20Arabic%20language%20study%20materials%2C%20notebook%2C%20tablet%2C%20premium%20academic%20website%20aesthetic%2C%20green%20and%20amber%20palette&image_size=landscape_16_9",
+    "audience": "Learners who want to understand Quranic and conversational Arabic.",
+    "curriculum": [
+      "Alphabet and reading review",
+      "Vocabulary building",
+      "Sentence construction",
+      "Introductory grammar patterns"
+    ]
+  },
+  {
+    "slug": "qirat",
+    "title": "Qirat",
+    "summary": "Advanced recitation coaching for students ready to refine tone, precision, and advanced reading styles.",
+    "duration": "Ongoing, 45 minute sessions",
+    "level": "Advanced",
+    "image": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=dramatic%20editorial%20portrait%20of%20a%20senior%20Quran%20reciter%20in%20a%20refined%20study%20space%2C%20premium%20academy%20website%2C%20deep%20green%20background%20with%20gold%20accents&image_size=landscape_16_9",
+    "audience": "Committed reciters pursuing refinement with experienced teachers.",
+    "curriculum": [
+      "Recitation style refinement",
+      "Advanced tajweed application",
+      "Melodic control and delivery",
+      "Performance confidence"
+    ]
+  }
+]

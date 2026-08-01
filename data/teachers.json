@@ -1,0 +1,62 @@
+[
+  {
+    "id": "t1",
+    "name": "Ustadh Musa Kareem",
+    "gender": "male",
+    "languages": ["English", "Arabic", "Urdu"],
+    "specialization": "Tajweed & Qirat",
+    "experienceYears": 11,
+    "image": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=editorial%20portrait%20of%20a%20male%20Quran%20teacher%20wearing%20modest%20professional%20clothing%2C%20warm%20studio%20lighting%2C%20premium%20Islamic%20academy%20website%20portrait&image_size=portrait_4_3",
+    "bio": "Known for calm recitation coaching and meticulous tajweed correction for teens and adults."
+  },
+  {
+    "id": "t2",
+    "name": "Ustadha Amina Rahman",
+    "gender": "female",
+    "languages": ["English", "Arabic", "Bengali"],
+    "specialization": "Noorani Qaidah",
+    "experienceYears": 8,
+    "image": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=editorial%20portrait%20of%20a%20female%20Quran%20teacher%20in%20a%20bright%20premium%20study%20setting%2C%20elegant%20Islamic%20education%20branding%2C%20soft%20green%20and%20cream%20palette&image_size=portrait_4_3",
+    "bio": "Specialises in gentle foundations for children beginning Quran reading with confidence."
+  },
+  {
+    "id": "t3",
+    "name": "Ustadh Yusuf Ahmad",
+    "gender": "male",
+    "languages": ["English", "Arabic"],
+    "specialization": "Hifz Mentoring",
+    "experienceYears": 9,
+    "image": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=refined%20portrait%20of%20a%20male%20Hifz%20mentor%20with%20bookshelf%20background%2C%20editorial%20photography%2C%20premium%20academy%20website%20tone&image_size=portrait_4_3",
+    "bio": "Builds personalised memorisation plans with revision discipline and parent reporting."
+  },
+  {
+    "id": "t4",
+    "name": "Ustadha Maryam Siddiqui",
+    "gender": "female",
+    "languages": ["English", "Urdu", "Hindi"],
+    "specialization": "Islamic Studies",
+    "experienceYears": 7,
+    "image": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=professional%20editorial%20portrait%20of%20a%20female%20Islamic%20studies%20teacher%2C%20warm%20paper-textured%20background%2C%20luxury%20education%20website&image_size=portrait_4_3",
+    "bio": "Focuses on adab, practical worship, and age-appropriate Islamic understanding for young learners."
+  },
+  {
+    "id": "t5",
+    "name": "Ustadh Bilal Hasan",
+    "gender": "male",
+    "languages": ["English", "Arabic", "Punjabi"],
+    "specialization": "Arabic Language",
+    "experienceYears": 10,
+    "image": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=editorial%20portrait%20of%20a%20modern%20Arabic%20language%20teacher%20in%20a%20premium%20study%20room%2C%20deep%20green%20backdrop%2C%20professional%20website%20photography&image_size=portrait_4_3",
+    "bio": "Helps students move from reading Arabic text to understanding vocabulary and structure."
+  },
+  {
+    "id": "t6",
+    "name": "Ustadha Safa Noor",
+    "gender": "female",
+    "languages": ["English", "Arabic"],
+    "specialization": "Tajweed for Sisters",
+    "experienceYears": 6,
+    "image": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=soft%20editorial%20portrait%20of%20a%20female%20tajweed%20teacher%20for%20an%20Islamic%20academy%20website%2C%20premium%20minimal%20studio%20lighting%2C%20warm%20neutral%20palette&image_size=portrait_4_3",
+    "bio": "Supports sisters with patient recitation feedback, confidence building, and polished fluency."
+  }
+]
