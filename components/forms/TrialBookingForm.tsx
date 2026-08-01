@@ -197,16 +197,17 @@ export default function TrialBookingForm() {
           )}
         </button>
         
-        {/* Status Messages */}
-        <div className="flex-1">
+        <div className="flex-1 w-full">
           {status && (
-            <div className="flex items-center gap-2 rounded-xl bg-[rgba(15,77,58,0.06)] px-4 py-3 text-sm font-medium text-[#0F4C3A]">
-              <div className="h-2 w-2 rounded-full bg-[#C9A227]" />
-              {status}
+            <div className="flex flex-col items-center justify-center rounded-2xl bg-[rgba(15,77,58,0.06)] p-5 text-center border border-[rgba(15,77,58,0.1)] w-full">
+              <h4 className="mb-1 text-sm font-bold text-[#0F4C3A]">Success!</h4>
+              <p className="text-[0.8rem] text-[#30453c]">
+                Our team will contact you shortly.
+              </p>
             </div>
           )}
           {error && (
-            <div className="flex items-center gap-2 rounded-xl bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+            <div className="flex items-center gap-2 rounded-xl bg-red-50 px-4 py-3 text-sm font-medium text-red-700 w-full mt-4 md:mt-0">
               <div className="h-2 w-2 rounded-full bg-red-500" />
               {error}
             </div>

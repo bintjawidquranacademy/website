@@ -109,7 +109,13 @@ export default function ContactForm() {
           <span className="text-white">{isSubmitting ? "Sending..." : "Send Message"}</span>
           <ArrowRight className="h-4 w-4 text-[#C9A227] transition-transform duration-300 group-hover:translate-x-1" />
         </button>
-        {status && <p className="text-[0.8rem] text-[#0F3D2E] font-medium text-center">{status}</p>}
+
+        {status && (
+          <div className="mt-2 flex flex-col items-center justify-center rounded-2xl bg-[#082E23]/5 p-5 text-center border border-[#082E23]/10">
+            <h4 className="mb-1 text-sm font-bold text-[#082E23]">Message Sent!</h4>
+            <p className="text-[0.8rem] text-[#30453c]">Our team will contact you shortly.</p>
+          </div>
+        )}
         {error && <p className="text-[0.8rem] text-red-600 font-medium text-center">{error}</p>}
       </div>
     </form>
