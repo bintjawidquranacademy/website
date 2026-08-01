@@ -34,8 +34,9 @@ export async function POST(request: Request) {
       success: true,
       message: "Your trial request was sent successfully.",
     });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error("Server Error:", err);
-    return Response.json({ success: false, message: `Server error: ${err.message || 'Unknown'}` }, { status: 500 });
+    const errorMessage = err instanceof Error ? err.message : String(err);
+    return Response.json({ success: false, message: `Server error: ${errorMessage}` }, { status: 500 });
   }
 }

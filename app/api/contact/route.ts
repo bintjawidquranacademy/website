@@ -24,15 +24,16 @@ export async function POST(request: Request) {
 
     if (error) {
       console.error("Supabase Error:", error);
-      return Response.json({ success: false, message: "Database error. Please try again later." }, { status: 500 });
+      return Response.json({ success: false, message: `Database error: ${error.message}` }, { status: 500 });
     }
 
     return Response.json({
       success: true,
       message: "Your message was sent successfully.",
     });
-  } catch (err) {
+  } catch (err: unknown) {
     console.error("Server Error:", err);
-    return Response.json({ success: false, message: "An unexpected error occurred." }, { status: 500 });
+    const errorMessage = err instanceof Error ? err.message : String(err);
+    return Response.json({ success: false, message: `Server error: ${errorMessage}` }, { status: 500 });
   }
 }
