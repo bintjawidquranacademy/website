@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Star, Clock, Globe2 } from "lucide-react";
 import type { Teacher } from "@/lib/types";

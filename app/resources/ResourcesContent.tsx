@@ -7,7 +7,6 @@ import {
   Library,
   Search,
   Eye,
-  ArrowRight,
   MessageCircle,
   Mail,
   BookOpen,

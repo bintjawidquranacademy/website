@@ -1,8 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { Star, ArrowRight, Award, Languages, GraduationCap } from "lucide-react";
-import Image from "next/image";
+import { ArrowRight, Award, Languages, GraduationCap } from "lucide-react";
 import Link from "next/link";
 
 import { teacherList } from "@/lib/content";

@@ -7,9 +7,7 @@ import {
   MessageCircle,
   Mail,
   Globe,
-  MapPinned,
   Phone,
-  ArrowRight,
   Headset,
   Clock,
   BookOpen,
@@ -226,7 +224,7 @@ export default function ContactContent() {
                 <Headset className="h-8 w-8" />
               </div>
               <h2 className="mb-6 font-display text-4xl text-white sm:text-5xl md:text-5xl lg:max-w-md">
-                We're here to help you begin with confidence.
+                We&apos;re here to help you begin with confidence.
               </h2>
               <div className="mb-6 flex w-16 items-center gap-2">
                 <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[#C9A227] lg:bg-gradient-to-l" />

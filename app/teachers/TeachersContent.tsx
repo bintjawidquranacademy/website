@@ -8,11 +8,8 @@ import {
   Users,
   CalendarCheck,
   BarChart3,
-  Search,
   Star,
   Quote,
-  Sparkles,
-  ArrowRight,
   MessageCircle,
   GraduationCap,
   Globe2,
@@ -64,7 +61,7 @@ const heroFeatures = [
   },
 ];
 
-const filterOptions = [
+const _filterOptions = [
   "All Teachers",
   "Male",
   "Female",
