@@ -61,16 +61,6 @@ const heroFeatures = [
   },
 ];
 
-const _filterOptions = [
-  "All Teachers",
-  "Male",
-  "Female",
-  "Tajweed",
-  "Hifz",
-  "Arabic",
-  "Islamic Studies",
-  "Qaidah",
-] as const;
 
 const whyFeatures = [
   {
