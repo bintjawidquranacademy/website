@@ -20,7 +20,7 @@ export default function TrialBookingForm({ onSuccess }: TrialBookingFormProps = 
     reset,
     formState: { errors, isSubmitting },
   } = useForm<TrialSubmission>({
-    defaultValues: { timezone: "Europe/London", website: "" },
+    defaultValues: { country: "United Kingdom", website: "" },
   });
 
   async function onSubmit(values: TrialSubmission) {
@@ -40,7 +40,7 @@ export default function TrialBookingForm({ onSuccess }: TrialBookingFormProps = 
       return;
     }
 
-    reset({ timezone: "Europe/London", website: "" });
+    reset({ country: "United Kingdom", website: "" });
     setStatus(data.message);
     if (onSuccess) onSuccess();
   }
@@ -156,21 +156,21 @@ export default function TrialBookingForm({ onSuccess }: TrialBookingFormProps = 
           {errors.preferredTime && <p className="ml-2 mt-1 text-[0.8rem] text-red-600 font-medium">{errors.preferredTime.message}</p>}
         </div>
 
-        {/* Timezone */}
+        {/* Country */}
         <div className="grid gap-2">
-          <label className="ml-2 text-[0.82rem] font-semibold tracking-wide text-[#30453c]" htmlFor="trial-timezone">
-            Timezone
+          <label className="ml-2 text-[0.82rem] font-semibold tracking-wide text-[#30453c]" htmlFor="trial-country">
+            Country
           </label>
           <div className="relative group">
             <Globe className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-[#C9A227] transition-transform duration-300 group-focus-within:scale-110" />
             <input 
               className={baseInputClass} 
-              id="trial-timezone" 
-              placeholder="Timezone" 
-              {...register("timezone", { required: "Timezone is required." })} 
+              id="trial-country" 
+              placeholder="Country" 
+              {...register("country", { required: "Country is required." })} 
             />
           </div>
-          {errors.timezone && <p className="ml-2 mt-1 text-[0.8rem] text-red-600 font-medium">{errors.timezone.message}</p>}
+          {errors.country && <p className="ml-2 mt-1 text-[0.8rem] text-red-600 font-medium">{errors.country.message}</p>}
         </div>
       </div>
 

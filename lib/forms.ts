@@ -32,7 +32,7 @@ export function validateTrialSubmission(payload: TrialSubmission) {
     !hasText(payload.name) ||
     !hasText(payload.courseInterest) ||
     !hasText(payload.preferredTime) ||
-    !hasText(payload.timezone)
+    !hasText(payload.country)
   ) {
     return { valid: false, message: "Please complete all required booking details." };
   }

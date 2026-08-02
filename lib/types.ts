@@ -45,7 +45,7 @@ export interface TrialSubmission {
   phone: string;
   courseInterest: string;
   preferredTime: string;
-  timezone: string;
+  country: string;
   message?: string;
   website?: string;
 }

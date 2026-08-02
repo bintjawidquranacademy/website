@@ -20,7 +20,7 @@ export async function POST(request: Request) {
           phone: payload.phone,
           course_interest: payload.courseInterest,
           preferred_time: payload.preferredTime,
-          timezone: payload.timezone,
+          timezone: payload.country, // Store country in the timezone column
           message: payload.message || null
         }
       ]);
