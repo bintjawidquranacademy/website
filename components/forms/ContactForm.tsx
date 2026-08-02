@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import Image from "next/image";
 import { User, Mail, Phone, MessageSquare, ArrowRight } from "lucide-react";
 import type { ContactSubmission } from "@/lib/types";
 
@@ -16,7 +15,6 @@ type ContactFormProps = {
 };
 
 export default function ContactForm({ onSuccess }: ContactFormProps = {}) {
-  const [status, setStatus] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const {
     handleSubmit,
@@ -28,7 +26,6 @@ export default function ContactForm({ onSuccess }: ContactFormProps = {}) {
   });
 
   async function onSubmit(values: ContactSubmission) {
-    setStatus(null);
     setError(null);
 
     const response = await fetch("/api/contact", {
@@ -45,7 +42,6 @@ export default function ContactForm({ onSuccess }: ContactFormProps = {}) {
     }
 
     reset();
-    setStatus(data.message);
     if (onSuccess) onSuccess();
   }
 

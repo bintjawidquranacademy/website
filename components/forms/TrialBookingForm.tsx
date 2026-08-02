@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import Image from "next/image";
 import { User, Phone, Mail, BookOpen, Clock, Globe, Pencil, ArrowRight } from "lucide-react";
 import { courseList } from "@/lib/content";
 import type { TrialSubmission } from "@/lib/types";
@@ -12,7 +11,6 @@ type TrialBookingFormProps = {
 };
 
 export default function TrialBookingForm({ onSuccess }: TrialBookingFormProps = {}) {
-  const [status, setStatus] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const {
     handleSubmit,
@@ -24,7 +22,6 @@ export default function TrialBookingForm({ onSuccess }: TrialBookingFormProps = 
   });
 
   async function onSubmit(values: TrialSubmission) {
-    setStatus(null);
     setError(null);
 
     const response = await fetch("/api/trial", {
@@ -41,7 +38,6 @@ export default function TrialBookingForm({ onSuccess }: TrialBookingFormProps = 
     }
 
     reset({ country: "United Kingdom", website: "" });
-    setStatus(data.message);
     if (onSuccess) onSuccess();
   }
 
