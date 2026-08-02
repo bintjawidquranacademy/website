@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { User, Phone, Mail, BookOpen, Clock, Globe, Pencil, ArrowRight } from "lucide-react";
 import { courseList } from "@/lib/content";
+import { countries } from "@/lib/countries";
 import type { TrialSubmission } from "@/lib/types";
 
 type TrialBookingFormProps = {
@@ -18,7 +19,7 @@ export default function TrialBookingForm({ onSuccess }: TrialBookingFormProps = 
     reset,
     formState: { errors, isSubmitting },
   } = useForm<TrialSubmission>({
-    defaultValues: { country: "United Kingdom", website: "" },
+    defaultValues: { country: "", website: "" },
   });
 
   async function onSubmit(values: TrialSubmission) {
@@ -37,7 +38,7 @@ export default function TrialBookingForm({ onSuccess }: TrialBookingFormProps = 
       return;
     }
 
-    reset({ country: "United Kingdom", website: "" });
+    reset({ country: "", website: "" });
     if (onSuccess) onSuccess();
   }
 
@@ -158,13 +159,25 @@ export default function TrialBookingForm({ onSuccess }: TrialBookingFormProps = 
             Country
           </label>
           <div className="relative group">
-            <Globe className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-[#C9A227] transition-transform duration-300 group-focus-within:scale-110" />
-            <input 
-              className={baseInputClass} 
+            <Globe className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-[#C9A227] z-10 transition-transform duration-300 group-focus-within:scale-110" />
+            <select 
+              className={`${baseInputClass} appearance-none cursor-pointer`} 
               id="trial-country" 
-              placeholder="Country" 
-              {...register("country", { required: "Country is required." })} 
-            />
+              {...register("country", { required: "Country is required." })}
+            >
+              <option value="" disabled hidden>Select country</option>
+              {countries.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </select>
+            {/* Custom dropdown arrow to match theme */}
+            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+              <svg className="w-5 h-5 text-[#30453c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
           </div>
           {errors.country && <p className="ml-2 mt-1 text-[0.8rem] text-red-600 font-medium">{errors.country.message}</p>}
         </div>
