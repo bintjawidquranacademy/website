@@ -262,5 +262,58 @@
       "/Dua/5.png"
     ],
     "featured": false
+  },
+  {
+    "slug": "dua-e-qunoot",
+    "title": "Dua e Qunoot",
+    "category": "Duas",
+    "description": "Learn and practice Dua e Qunoot with clear visual guides.",
+    "image": "/dua e qunoot/1.png",
+    "fileUrl": "/dua e qunoot/1.png",
+    "galleryUrls": [
+      "/dua e qunoot/1.png",
+      "/dua e qunoot/2.png"
+    ],
+    "featured": false
+  },
+  {
+    "slug": "hadith",
+    "title": "Hadith",
+    "category": "Hadith",
+    "description": "A collection of essential Hadith for daily guidance and learning.",
+    "image": "/hadith/1.png",
+    "fileUrl": "/hadith/1.png",
+    "galleryUrls": [
+      "/hadith/1.png",
+      "/hadith/2.png",
+      "/hadith/3.png",
+      "/hadith/4.png",
+      "/hadith/5.png",
+      "/hadith/6.png",
+      "/hadith/7.png"
+    ],
+    "featured": false
+  },
+  {
+    "slug": "islamic-month",
+    "title": "Islamic Months",
+    "category": "Islamic Studies",
+    "description": "Learn the Islamic months and their significance with these helpful resources.",
+    "image": "/islamic month/1.png",
+    "fileUrl": "/islamic month/1.png",
+    "galleryUrls": [
+      "/islamic month/1.png",
+      "/islamic month/2.png",
+      "/islamic month/3.png",
+      "/islamic month/4.png",
+      "/islamic month/5.png",
+      "/islamic month/6.png",
+      "/islamic month/7.png",
+      "/islamic month/8.png",
+      "/islamic month/9.png",
+      "/islamic month/10.png",
+      "/islamic month/11.png"
+    ],
+    "featured": false
   }
 ]
