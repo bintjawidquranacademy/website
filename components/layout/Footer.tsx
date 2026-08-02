@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MessageCircle, Facebook, Instagram, Youtube } from "lucide-react";
 import { siteConfig } from "@/lib/site";
+import { courseList } from "@/lib/content";
 
 export default function Footer() {
   return (
@@ -102,21 +103,13 @@ export default function Footer() {
           <div className="space-y-3">
             <h4 className="font-display text-base font-bold text-[#D4AF37]">Our Courses</h4>
             <ul className="space-y-2 text-xs sm:text-sm text-gray-300">
-              <li>
-                <Link href="/courses/quran-reading" className="hover:text-[#D4AF37] transition-colors">Quran Reading</Link>
-              </li>
-              <li>
-                <Link href="/courses/tajweed" className="hover:text-[#D4AF37] transition-colors">Tajweed Courses</Link>
-              </li>
-              <li>
-                <Link href="/courses/islamic-studies" className="hover:text-[#D4AF37] transition-colors">Islamic Studies</Link>
-              </li>
-              <li>
-                <Link href="/courses/dua-learning" className="hover:text-[#D4AF37] transition-colors">Dua Learning</Link>
-              </li>
-              <li>
-                <Link href="/courses/arabic-language" className="hover:text-[#D4AF37] transition-colors">Arabic Language</Link>
-              </li>
+              {courseList.map((course) => (
+                <li key={course.slug}>
+                  <Link href={`/courses/${course.slug}`} className="hover:text-[#D4AF37] transition-colors">
+                    {course.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
