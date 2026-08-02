@@ -27,7 +27,7 @@ const heroHighlights = [
   {
     icon: BookOpen,
     title: "Structured Courses",
-    description: "From Noorani Qaida to Hifz and Tajweed",
+    description: "From Noorani Qaida to Hifz and Tajweed (Recitation)",
   },
   {
     icon: Headphones,

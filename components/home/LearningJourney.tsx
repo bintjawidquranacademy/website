@@ -20,7 +20,7 @@ const milestones = [
   {
     icon: ScrollText,
     number: "02",
-    title: "Basic Tajweed",
+    title: "Basic Tajweed (Recitation)",
     description: "Learn core rules of recitation, vocal points, and proper sound articulation.",
   },
   {
@@ -32,8 +32,8 @@ const milestones = [
   {
     icon: LibraryBig,
     number: "04",
-    title: "Advanced Tajweed",
-    description: "Refine intricate Tajweed nuances, stops, elongation, and melodic rules.",
+    title: "Advanced Tajweed (Recitation)",
+    description: "Refine intricate Tajweed (Recitation) nuances, stops, elongation, and melodic rules.",
   },
   {
     icon: GraduationCap,

@@ -192,9 +192,9 @@
   },
   {
     "slug": "coloured-tajweed-quran",
-    "title": "Coloured Tajweed Quran",
+    "title": "Coloured Tajweed (Recitation) Quran",
     "category": "Quran",
-    "description": "A colour-coded Quran that helps learners identify Tajweed rules visually while improving recitation accuracy.",
+    "description": "A colour-coded Quran that helps learners identify Tajweed (Recitation) rules visually while improving recitation accuracy.",
     "image": "/quran.png",
     "fileUrl": "/tajwidi-hafizi-quran-16-lines-color.pdf",
     "featured": true

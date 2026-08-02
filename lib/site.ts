@@ -14,7 +14,7 @@ export const siteConfig = {
   shortName: "Bint Jawid",
   url: getSiteUrl(),
   description:
-    "Learn Quran, Tajweed, Hifz, Arabic, and Islamic Studies online with certified male and female teachers, flexible timings, and personalised one-to-one lessons.",
+    "Learn Quran, Tajweed (Recitation), Hifz, Arabic, and Islamic Studies online with certified male and female teachers, flexible timings, and personalised one-to-one lessons.",
   email: "bintjawidquranacademy@gmail.com",
   phone: "+92 325 9839004",
   whatsapp: "https://wa.me/923259839004",

@@ -73,7 +73,7 @@ const benefitCards = [
     icon: GraduationCap,
     title: "Expert Teachers",
     description:
-      "Qualified teachers who combine Tajweed precision with patient communication.",
+      "Qualified teachers who combine Tajweed (Recitation) precision with patient communication.",
   },
   {
     icon: BookOpen,

@@ -81,7 +81,7 @@ export default function CoursesContent({ courseList }: { courseList: Course[] })
                 {
                   icon: BookOpen,
                   title: "Structured Learning",
-                  desc: "Learning pathways across Noorani Qaida, Tajweed, Quran Reading, Hifz, Arabic Language and Islamic Studies.",
+                  desc: "Learning pathways across Noorani Qaida, Tajweed (Recitation), Quran Reading, Hifz, Arabic Language and Islamic Studies.",
                 },
                 {
                   icon: User,

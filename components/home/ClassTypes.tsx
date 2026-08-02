@@ -20,7 +20,7 @@ const classTypes = [
     icon: BookOpenText,
     title: "Structured Learning Paths",
     description:
-      "Noorani Qaidah, Tajweed, Hifz, Islamic Studies, Arabic, and Qirat are all mapped into progressive, easy-to-follow tracks.",
+      "Noorani Qaidah, Tajweed (Recitation), Hifz, Islamic Studies, Arabic, and Qirat are all mapped into progressive, easy-to-follow tracks.",
   },
 ];
 
@@ -29,7 +29,7 @@ export default function ClassTypes() {
     <section className="section-divider py-16 md:py-24">
       <div className="page-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <SectionHeading
-          description="Whether your child is beginning with letters or moving toward memorisation and Tajweed refinement, each class type is shaped to feel thoughtful, calm, and premium."
+          description="Whether your child is beginning with letters or moving toward memorisation and Tajweed (Recitation) refinement, each class type is shaped to feel thoughtful, calm, and premium."
           eyebrow="Learning Formats"
           title="Flexible lesson formats for families who want clarity and comfort."
         />

@@ -5,7 +5,7 @@ import { buildMetadata } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata(
   "Teachers",
-  "Meet experienced male and female Quran teachers specialising in Tajweed, Hifz, Arabic, and Islamic Studies.",
+  "Meet experienced male and female Quran teachers specialising in Tajweed (Recitation), Hifz, Arabic, and Islamic Studies.",
 );
 
 export default function TeachersPage() {

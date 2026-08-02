@@ -5,7 +5,7 @@ import CoursesContent from "./CoursesContent";
 
 export const metadata: Metadata = buildMetadata(
   "Courses",
-  "Browse Quran, Tajweed, Hifz, Islamic Studies, Arabic, and Qirat courses with personalised online teaching.",
+  "Browse Quran, Tajweed (Recitation), Hifz, Islamic Studies, Arabic, and Qirat courses with personalised online teaching.",
 );
 
 export default function CoursesPage() {

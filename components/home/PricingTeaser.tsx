@@ -23,7 +23,7 @@ export default function PricingTeaser() {
                 Premium private Quran classes starting from £8 per hour.
               </h2>
               <p className="max-w-2xl text-sm leading-7 text-white/78 md:text-base">
-                Weekly plans are available for foundational reading, Tajweed refinement,
+                Weekly plans are available for foundational reading, Tajweed (Recitation) refinement,
                 memorisation, and family-focused Islamic education with room to scale as progress
                 grows.
               </p>

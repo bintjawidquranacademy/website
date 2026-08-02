@@ -1,7 +1,7 @@
 import Reveal from "@/components/ui/Reveal";
 
 const stats = [
-  { value: "1,500+", label: "Learners guided across early reading, Tajweed, Hifz, and Islamic Studies" },
+  { value: "1,500+", label: "Learners guided across early reading, Tajweed (Recitation), Hifz, and Islamic Studies" },
   { value: "150+", label: "Qualified tutors and subject specialists available for global families" },
   { value: "25+", label: "Countries served with flexible timetables and multilingual support" },
 ];

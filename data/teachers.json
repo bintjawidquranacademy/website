@@ -4,10 +4,10 @@
     "name": "Ustadh Musa Kareem",
     "gender": "male",
     "languages": ["English", "Arabic", "Urdu"],
-    "specialization": "Tajweed & Qirat",
+    "specialization": "Tajweed (Recitation) & Qirat",
     "experienceYears": 11,
     "image": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=editorial%20portrait%20of%20a%20male%20Quran%20teacher%20wearing%20modest%20professional%20clothing%2C%20warm%20studio%20lighting%2C%20premium%20Islamic%20academy%20website%20portrait&image_size=portrait_4_3",
-    "bio": "Known for calm recitation coaching and meticulous tajweed correction for teens and adults."
+    "bio": "Known for calm recitation coaching and meticulous tajweed (recitation) correction for teens and adults."
   },
   {
     "id": "t2",
@@ -54,7 +54,7 @@
     "name": "Ustadha Safa Noor",
     "gender": "female",
     "languages": ["English", "Arabic"],
-    "specialization": "Tajweed for Sisters",
+    "specialization": "Tajweed (Recitation) for Sisters",
     "experienceYears": 6,
     "image": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=soft%20editorial%20portrait%20of%20a%20female%20tajweed%20teacher%20for%20an%20Islamic%20academy%20website%2C%20premium%20minimal%20studio%20lighting%2C%20warm%20neutral%20palette&image_size=portrait_4_3",
     "bio": "Supports sisters with patient recitation feedback, confidence building, and polished fluency."

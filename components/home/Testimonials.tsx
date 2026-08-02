@@ -19,7 +19,7 @@ const testimonialsData: Testimonial[] = [
     country: "United Kingdom",
     flag: "🇬🇧",
     review:
-      "The teachers are amazing and so patient! My Tajweed and recitation have improved dramatically within just three months of one-on-one sessions.",
+      "The teachers are amazing and so patient! My Tajweed (Recitation) and recitation have improved dramatically within just three months of one-on-one sessions.",
   },
   {
     id: "2",

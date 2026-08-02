@@ -34,7 +34,7 @@ const faqs: FAQItem[] = [
     id: "4",
     question: "Do you offer certificates?",
     answer:
-      "Yes! Upon successfully completing any course level (Noorani Qaida, Tajweed Mastery, or Hifz), students undergo evaluation and receive an official Academy Certificate.",
+      "Yes! Upon successfully completing any course level (Noorani Qaida, Tajweed (Recitation) Mastery, or Hifz), students undergo evaluation and receive an official Academy Certificate.",
   },
   {
     id: "5",

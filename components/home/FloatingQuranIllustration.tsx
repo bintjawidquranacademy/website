@@ -23,7 +23,7 @@ export default function FloatingQuranIllustration() {
           Guided Recitation
         </p>
         <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-          Tajweed, adab, and daily consistency shaped into a calm learning journey.
+          Tajweed (Recitation), adab, and daily consistency shaped into a calm learning journey.
         </p>
       </div>
     </div>

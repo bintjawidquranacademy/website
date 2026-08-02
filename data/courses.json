@@ -2,7 +2,7 @@
   {
     "slug": "noorani-qaidah",
     "title": "Noorani Qaidah",
-    "summary": "A gentle beginner pathway that teaches Arabic letters, pronunciation, and first Tajweed foundations.",
+    "summary": "A gentle beginner pathway that teaches Arabic letters, pronunciation, and first Tajweed (Recitation) foundations.",
     "duration": "12 to 16 weeks, 30 minute sessions",
     "level": "Beginner",
     "image": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=editorial%20photograph%20of%20a%20young%20student%20learning%20Arabic%20letters%20with%20a%20Quran%20teacher%2C%20warm%20natural%20light%2C%20premium%20Islamic%20education%20website%2C%20soft%20green%20and%20gold%20tones&image_size=landscape_16_9",
@@ -16,7 +16,7 @@
   },
   {
     "slug": "tajweed",
-    "title": "Tajweed",
+    "title": "Tajweed (Recitation)",
     "summary": "Structured one-to-one lessons focused on correct recitation, rhythm, and confidence in reading the Quran beautifully.",
     "duration": "Ongoing, 30 to 45 minute sessions",
     "level": "Beginner to advanced",
@@ -40,7 +40,7 @@
     "curriculum": [
       "Daily sabaq planning",
       "Revision and retention framework",
-      "Tajweed integration during memorization",
+      "Tajweed (Recitation) integration during memorization",
       "Monthly progress tracking"
     ]
   },
@@ -84,7 +84,7 @@
     "audience": "Committed reciters pursuing refinement with experienced teachers.",
     "curriculum": [
       "Recitation style refinement",
-      "Advanced tajweed application",
+      "Advanced tajweed (recitation) application",
       "Melodic control and delivery",
       "Performance confidence"
     ]

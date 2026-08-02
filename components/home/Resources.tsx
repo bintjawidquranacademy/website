@@ -31,7 +31,7 @@ const resources: ResourceItem[] = [
   {
     id: "3",
     title: "Color Coded Quran",
-    description: "Read the Holy Quran with color-coded Tajweed rules to improve your recitation.",
+    description: "Read the Holy Quran with color-coded Tajweed (Recitation) rules to improve your recitation.",
     image: "/quran.png",
     href: "/resources/quran-reading-book",
   },

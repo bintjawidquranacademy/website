@@ -145,7 +145,7 @@ export default function TeachersContent({ teachers }: TeachersContentProps) {
                     Meet Experienced Quran Teachers Dedicated to Your Learning.
                   </h1>
                   <p className="max-w-2xl text-base leading-relaxed text-[#56655e] md:text-lg md:leading-relaxed">
-                    Every teacher is carefully selected, highly qualified in Tajweed and
+                    Every teacher is carefully selected, highly qualified in Tajweed (Recitation) and
                     Islamic studies, and committed to providing personalized one-to-one
                     Quran education for students of all ages.
                   </p>
