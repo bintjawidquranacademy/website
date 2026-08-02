@@ -44,6 +44,21 @@ export default function TrialBookingForm() {
   const baseInputClass =
     "w-full rounded-[20px] border border-[rgba(15,77,58,0.1)] bg-[rgba(255,255,255,0.7)] px-5 py-4 pl-12 text-sm text-[#13281f] placeholder:text-[#8b9992] outline-none transition-all duration-300 focus:border-[#C9A227] focus:bg-white focus:ring-4 focus:ring-[rgba(200,155,60,0.1)] hover:border-[rgba(15,77,58,0.2)]";
 
+  if (status) {
+    return (
+      <div className="w-full overflow-hidden rounded-3xl shadow-[0_20px_60px_rgba(15,77,58,0.15)]">
+        <Image
+          src="/after form.png"
+          alt="Thank you – our team will contact you shortly"
+          width={1200}
+          height={600}
+          className="w-full h-auto object-cover"
+          priority
+        />
+      </div>
+    );
+  }
+
   return (
     <form className="grid gap-6 md:gap-8" onSubmit={handleSubmit(onSubmit)}>
       <input className="hidden" tabIndex={-1} {...register("website")} />
@@ -208,19 +223,6 @@ export default function TrialBookingForm() {
         </div>
       </div>
 
-      {/* Success Image */}
-      {status && (
-        <div className="mt-6 w-full overflow-hidden rounded-3xl shadow-[0_20px_60px_rgba(15,77,58,0.15)]">
-          <Image
-            src="/after form.png"
-            alt="Thank you – our team will contact you shortly"
-            width={1200}
-            height={600}
-            className="w-full h-auto object-cover"
-            priority
-          />
-        </div>
-      )}
     </form>
   );
 }

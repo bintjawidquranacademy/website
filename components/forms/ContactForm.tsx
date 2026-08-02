@@ -44,6 +44,21 @@ export default function ContactForm() {
     setStatus(data.message);
   }
 
+  if (status) {
+    return (
+      <div className="w-full overflow-hidden rounded-3xl shadow-[0_20px_60px_rgba(15,77,58,0.15)]">
+        <Image
+          src="/after form.png"
+          alt="Thank you – our team will contact you shortly"
+          width={1200}
+          height={600}
+          className="w-full h-auto object-cover"
+          priority
+        />
+      </div>
+    );
+  }
+
   return (
     <form className="grid gap-5" onSubmit={handleSubmit(onSubmit)}>
       <input className="hidden" tabIndex={-1} {...register("website")} />
@@ -113,20 +128,6 @@ export default function ContactForm() {
 
         {error && <p className="text-[0.8rem] text-red-600 font-medium text-center">{error}</p>}
       </div>
-
-      {/* Success Image */}
-      {status && (
-        <div className="mt-4 w-full overflow-hidden rounded-3xl shadow-[0_20px_60px_rgba(15,77,58,0.15)]">
-          <Image
-            src="/after form.png"
-            alt="Thank you – our team will contact you shortly"
-            width={1200}
-            height={600}
-            className="w-full h-auto object-cover"
-            priority
-          />
-        </div>
-      )}
     </form>
   );
 }
