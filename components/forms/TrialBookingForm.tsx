@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import Image from "next/image";
 import { User, Phone, Mail, BookOpen, Clock, Globe, Pencil, ArrowRight } from "lucide-react";
 import { courseList } from "@/lib/content";
 import type { TrialSubmission } from "@/lib/types";
@@ -198,22 +199,28 @@ export default function TrialBookingForm() {
         </button>
         
         <div className="flex-1 w-full">
-          {status && (
-            <div className="flex flex-col items-center justify-center rounded-2xl bg-[rgba(15,77,58,0.06)] p-5 text-center border border-[rgba(15,77,58,0.1)] w-full">
-              <h4 className="mb-1 text-sm font-bold text-[#0F4C3A]">Success!</h4>
-              <p className="text-[0.8rem] text-[#30453c]">
-                Our team will contact you shortly.
-              </p>
-            </div>
-          )}
           {error && (
-            <div className="flex items-center gap-2 rounded-xl bg-red-50 px-4 py-3 text-sm font-medium text-red-700 w-full mt-4 md:mt-0">
+            <div className="flex items-center gap-2 rounded-xl bg-red-50 px-4 py-3 text-sm font-medium text-red-700 w-full">
               <div className="h-2 w-2 rounded-full bg-red-500" />
               {error}
             </div>
           )}
         </div>
       </div>
+
+      {/* Success Image */}
+      {status && (
+        <div className="mt-6 w-full overflow-hidden rounded-3xl shadow-[0_20px_60px_rgba(15,77,58,0.15)]">
+          <Image
+            src="/after form.png"
+            alt="Thank you – our team will contact you shortly"
+            width={1200}
+            height={600}
+            className="w-full h-auto object-cover"
+            priority
+          />
+        </div>
+      )}
     </form>
   );
 }

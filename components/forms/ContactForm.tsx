@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import Image from "next/image";
 import { User, Mail, Phone, MessageSquare, ArrowRight } from "lucide-react";
 import type { ContactSubmission } from "@/lib/types";
 
@@ -110,14 +111,22 @@ export default function ContactForm() {
           <ArrowRight className="h-4 w-4 text-[#C9A227] transition-transform duration-300 group-hover:translate-x-1" />
         </button>
 
-        {status && (
-          <div className="mt-2 flex flex-col items-center justify-center rounded-2xl bg-[#082E23]/5 p-5 text-center border border-[#082E23]/10">
-            <h4 className="mb-1 text-sm font-bold text-[#082E23]">Message Sent!</h4>
-            <p className="text-[0.8rem] text-[#30453c]">Our team will contact you shortly.</p>
-          </div>
-        )}
         {error && <p className="text-[0.8rem] text-red-600 font-medium text-center">{error}</p>}
       </div>
+
+      {/* Success Image */}
+      {status && (
+        <div className="mt-4 w-full overflow-hidden rounded-3xl shadow-[0_20px_60px_rgba(15,77,58,0.15)]">
+          <Image
+            src="/after form.png"
+            alt="Thank you – our team will contact you shortly"
+            width={1200}
+            height={600}
+            className="w-full h-auto object-cover"
+            priority
+          />
+        </div>
+      )}
     </form>
   );
 }
