@@ -78,14 +78,9 @@ export default async function ResourceDetailPage({ params }: ResourceDetailPageP
             eyebrow={resource.category}
             title={resource.title}
             actions={
-              <>
-                <Button href={resource.fileUrl} target="_blank">
-                  Open First Page
-                </Button>
-                <Button href="/resources" variant="secondary">
-                  Back To Library
-                </Button>
-              </>
+              <Button href="/resources" variant="secondary">
+                Back To Library
+              </Button>
             }
             stats={[
               { value: `${pageCount}`, label: "Pages arranged in a comfortable vertical reading flow." },
