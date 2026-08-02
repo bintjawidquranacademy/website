@@ -11,7 +11,11 @@ const iconClass = "absolute left-4 h-5 w-5 text-[#0F3D2E]/40 transition-colors d
 const inputClass =
   "w-full rounded-[20px] border border-[var(--line)] bg-white/70 py-3.5 pl-12 pr-4 text-[0.85rem] text-[var(--ink)] shadow-[0_2px_10px_rgba(18,40,30,0.02)] backdrop-blur-sm transition-all duration-300 placeholder:text-[var(--muted)] hover:border-[#C9A227]/40 focus:border-[#C9A227] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#C9A227]/10";
 
-export default function ContactForm() {
+type ContactFormProps = {
+  onSuccess?: () => void;
+};
+
+export default function ContactForm({ onSuccess }: ContactFormProps = {}) {
   const [status, setStatus] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const {
@@ -42,21 +46,7 @@ export default function ContactForm() {
 
     reset();
     setStatus(data.message);
-  }
-
-  if (status) {
-    return (
-      <div className="w-full overflow-hidden rounded-3xl shadow-[0_20px_60px_rgba(15,77,58,0.15)]">
-        <Image
-          src="/after form.png"
-          alt="Thank you – our team will contact you shortly"
-          width={1200}
-          height={600}
-          className="w-full h-auto object-cover"
-          priority
-        />
-      </div>
-    );
+    if (onSuccess) onSuccess();
   }
 
   return (

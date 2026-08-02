@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { CalendarCheck, ShieldCheck, UserCheck, CalendarDays } from "lucide-react";
@@ -53,6 +54,8 @@ const steps = [
 /* ------------------------------------------------------------------ */
 
 export default function FreeTrialContent() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   return (
     <div className="overflow-hidden pb-14 md:pb-24">
       {/* ============================================================ */}
@@ -146,24 +149,40 @@ export default function FreeTrialContent() {
       {/* ============================================================ */}
       <section className="relative px-4 pt-10 md:px-6 md:pt-12">
         <div className="mx-auto max-w-[1240px]">
-          <motion.div
-            {...fadeUp(0.1)}
-            className="relative overflow-hidden rounded-[36px] border border-[rgba(15,77,58,0.08)] bg-[linear-gradient(180deg,rgba(255,255,255,0.85),rgba(255,252,245,0.7))] p-6 shadow-[0_20px_60px_rgba(20,40,30,0.08)] backdrop-blur-xl md:p-12 lg:p-16"
-          >
-            {/* Subtle background pattern */}
-            <div className="absolute inset-0 -z-10 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#0F4C3A 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-            
-            <div className="mb-10 flex items-center gap-4 border-b border-[rgba(200,155,60,0.2)] pb-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[rgba(200,155,60,0.1)]">
-                <CalendarDays className="h-6 w-6 text-[#C9A227]" />
+          {isSubmitted ? (
+            <motion.div 
+              className="relative w-full overflow-hidden rounded-[36px] shadow-[0_20px_60px_rgba(15,77,58,0.15)] bg-white"
+              {...fadeUp(0.1)}
+            >
+              <Image
+                src="/after form.png"
+                alt="Thank you – our team will contact you shortly"
+                width={1200}
+                height={600}
+                className="w-full h-auto object-cover"
+                priority
+              />
+            </motion.div>
+          ) : (
+            <motion.div
+              {...fadeUp(0.1)}
+              className="relative overflow-hidden rounded-[36px] border border-[rgba(15,77,58,0.08)] bg-[linear-gradient(180deg,rgba(255,255,255,0.85),rgba(255,252,245,0.7))] p-6 shadow-[0_20px_60px_rgba(20,40,30,0.08)] backdrop-blur-xl md:p-12 lg:p-16"
+            >
+              {/* Subtle background pattern */}
+              <div className="absolute inset-0 -z-10 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#0F4C3A 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+              
+              <div className="mb-10 flex items-center gap-4 border-b border-[rgba(200,155,60,0.2)] pb-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[rgba(200,155,60,0.1)]">
+                  <CalendarDays className="h-6 w-6 text-[#C9A227]" />
+                </div>
+                <h2 className="font-display text-3xl leading-tight text-[#13281f] md:text-4xl">
+                  Trial booking form
+                </h2>
               </div>
-              <h2 className="font-display text-3xl leading-tight text-[#13281f] md:text-4xl">
-                Trial booking form
-              </h2>
-            </div>
-            
-            <TrialBookingForm />
-          </motion.div>
+              
+              <TrialBookingForm onSuccess={() => setIsSubmitted(true)} />
+            </motion.div>
+          )}
         </div>
       </section>
     </div>
