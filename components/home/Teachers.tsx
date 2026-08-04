@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { ArrowRight, Award, Languages, GraduationCap } from "lucide-react";
+import { ArrowRight, Award, GraduationCap } from "lucide-react";
 import Link from "next/link";
 
 import { teacherList } from "@/lib/content";
@@ -84,13 +84,8 @@ export default function Teachers() {
               className="group relative flex flex-col justify-between overflow-hidden rounded-[24px] bg-white border border-[#EADFCB] p-6 shadow-[0_15px_35px_rgba(15,76,58,0.06)] hover:shadow-[0_25px_50px_rgba(15,76,58,0.15)] hover:border-[#D4AF37] transition-all duration-300"
             >
               <div>
-                {/* Blank Photo Header */}
-                <div className="relative h-60 w-full overflow-hidden rounded-2xl bg-[#FAF8F3]">
-                  {/* Image removed as requested, remaining blank */}
-                </div>
-
                 {/* Teacher Details */}
-                <div className="mt-5">
+                <div>
                   <div className="flex items-center justify-between">
                     <h3 className="font-display text-xl font-bold text-[#0F4C3A] group-hover:text-[#D4AF37] transition-colors duration-300">
                       {teacher.name}
@@ -107,12 +102,6 @@ export default function Teachers() {
                   <div className="mt-4 flex items-start gap-2 text-xs text-[#5A6E65]">
                     <GraduationCap className="w-4 h-4 text-[#0F4C3A] shrink-0 mt-0.5" />
                     <span className="line-clamp-1 font-medium">{teacher.specialization}</span>
-                  </div>
-
-                  {/* Languages */}
-                  <div className="mt-2.5 flex items-center gap-2 text-xs text-[#5A6E65]">
-                    <Languages className="w-4 h-4 text-[#0F4C3A] shrink-0" />
-                    <span className="font-medium">{teacher.languages.join(", ")}</span>
                   </div>
                 </div>
               </div>

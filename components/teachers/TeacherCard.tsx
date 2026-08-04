@@ -1,9 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star, Clock, Globe2 } from "lucide-react";
+import { Star, Clock } from "lucide-react";
 import type { Teacher } from "@/lib/types";
-import { formatList } from "@/lib/utils";
 
 type TeacherCardProps = {
   teacher: Teacher;
@@ -22,26 +21,6 @@ export default function TeacherCard({ teacher, index = 0 }: TeacherCardProps) {
       {/* Top gold accent line */}
       <div className="absolute inset-x-6 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(200,155,60,0.5),transparent)]" />
 
-      {/* Image Section */}
-      <div className="relative overflow-hidden h-72 bg-[#FAF8F3]">
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[rgba(9,25,20,0.6)] via-transparent to-transparent" />
-
-        {/* Specialization badge */}
-        <div className="absolute bottom-4 left-4">
-          <span className="inline-flex items-center rounded-full border border-[rgba(200,155,60,0.4)] bg-[rgba(15,60,40,0.85)] px-3.5 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.2em] !text-[#e8d5a3] backdrop-blur-md">
-            {teacher.specialization}
-          </span>
-        </div>
-
-        {/* Gender badge */}
-        <div className="absolute bottom-4 right-4">
-          <span className="inline-flex items-center rounded-full border border-white/20 bg-white/20 px-3 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.18em] !text-white backdrop-blur-md">
-            {teacher.gender}
-          </span>
-        </div>
-      </div>
-
       {/* Content Section */}
       <div className="flex flex-1 flex-col p-6 pt-5">
         {/* Name */}
@@ -49,8 +28,15 @@ export default function TeacherCard({ teacher, index = 0 }: TeacherCardProps) {
           {teacher.name}
         </h3>
 
+        {/* Specialization badge */}
+        <div className="mt-3">
+          <span className="inline-flex items-center rounded-full border border-[rgba(200,155,60,0.4)] bg-[rgba(15,60,40,0.85)] px-3.5 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.2em] !text-[#e8d5a3]">
+            {teacher.specialization}
+          </span>
+        </div>
+
         {/* Bio */}
-        <p className="mt-2.5 text-[0.88rem] leading-relaxed text-[#56655e]">
+        <p className="mt-4 text-[0.88rem] leading-relaxed text-[#56655e]">
           {teacher.bio}
         </p>
 
@@ -59,10 +45,6 @@ export default function TeacherCard({ teacher, index = 0 }: TeacherCardProps) {
           <div className="flex items-center gap-2 text-[0.82rem] text-[#56655e]">
             <Clock className="h-3.5 w-3.5 text-[#C9A227]" />
             <span>{teacher.experienceYears}+ years experience</span>
-          </div>
-          <div className="flex items-center gap-2 text-[0.82rem] text-[#56655e]">
-            <Globe2 className="h-3.5 w-3.5 text-[#C9A227]" />
-            <span>{formatList(teacher.languages)}</span>
           </div>
           <div className="flex items-center gap-2 text-[0.82rem] text-[#56655e]">
             <Star className="h-3.5 w-3.5 fill-[#C9A227] text-[#C9A227]" />
