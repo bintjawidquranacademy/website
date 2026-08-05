@@ -44,37 +44,40 @@ const slideIn = (direction: "left" | "right", delay = 0) => ({
 
 const plans = [
   {
-    name: "Starter",
-    price: "$29/month",
+    name: "3 Day",
+    price: "£48.20/month",
     features: [
-      "1 Interactive Class/Week",
-      "20 Minutes Per Class",
-      "Specialized Materials",
-      "Progress Reports",
+      "3 Days a Week",
+      "12 Classes a Month",
+      "30 Minute Session",
     ]
   },
   {
-    name: "Standard",
-    price: "$59/month",
+    name: "4 Day",
+    price: "£53.40/month",
     features: [
-      "2 Interactive Class/Week",
-      "30 Minutes Per Class",
-      "Specialized Materials",
-      "Progress Reports",
-      "Priority Assistance",
+      "4 Days a Week",
+      "16 Classes a Month",
+      "30 Minute Session",
+    ]
+  },
+  {
+    name: "5 Day",
+    price: "£58.50/month",
+    features: [
+      "5 Days a Week",
+      "20 Classes a Month",
+      "30 Minute Session",
     ],
     isPopular: true
   },
   {
-    name: "Premium",
-    price: "$99/month",
+    name: "6 Day",
+    price: "£62.30/month",
     features: [
-      "3 Interactive Class/Week",
-      "30 Minutes Per Class",
-      "Specialized Materials",
-      "Progress Reports",
-      "Priority Assistance",
-      "MONTHLY ASSESSMENT",
+      "6 Days a Week",
+      "24 Classes a Month",
+      "30 Minute Session",
     ]
   },
 ];
@@ -204,7 +207,7 @@ export default function PricingContent() {
 
       {/* ====== PRICING CARDS ====== */}
       <section className="page-shell mt-24 lg:mt-32">
-        <div className="grid gap-8 md:grid-cols-3 items-center">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-center">
           {plans.map((plan, i) => {
             const isPopular = plan.isPopular;
             return (

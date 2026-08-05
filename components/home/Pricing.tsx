@@ -17,47 +17,54 @@ interface Plan {
 
 const plans: Plan[] = [
   {
-    id: "starter",
-    name: "Starter Plan",
-    price: "$29",
+    id: "3day",
+    name: "3 Day Plan",
+    price: "£48.20",
     billing: "/month",
     features: [
-      "1 Interactive Class/Week",
-      "20 Minutes Per Class",
-      "Specialized Materials",
-      "Progress Reports",
+      "3 Days a Week",
+      "12 Classes a Month",
+      "30 Minute Session",
     ],
     ctaText: "Get Started",
     ctaHref: "/free-trial",
   },
   {
-    id: "standard",
-    name: "Standard Plan",
-    price: "$59",
+    id: "4day",
+    name: "4 Day Plan",
+    price: "£53.40",
+    billing: "/month",
+    features: [
+      "4 Days a Week",
+      "16 Classes a Month",
+      "30 Minute Session",
+    ],
+    ctaText: "Get Started",
+    ctaHref: "/free-trial",
+  },
+  {
+    id: "5day",
+    name: "5 Day Plan",
+    price: "£58.50",
     billing: "/month",
     popular: true,
     features: [
-      "2 Interactive Class/Week",
-      "30 Minutes Per Class",
-      "Specialized Materials",
-      "Progress Reports",
-      "Priority Assistance",
+      "5 Days a Week",
+      "20 Classes a Month",
+      "30 Minute Session",
     ],
     ctaText: "Get Started",
     ctaHref: "/free-trial",
   },
   {
-    id: "premium",
-    name: "Premium Plan",
-    price: "$99",
+    id: "6day",
+    name: "6 Day Plan",
+    price: "£62.30",
     billing: "/month",
     features: [
-      "3 Interactive Class/Week",
-      "30 Minutes Per Class",
-      "Specialized Materials",
-      "Progress Reports",
-      "Priority Assistance",
-      "MONTHLY ASSESSMENT",
+      "6 Days a Week",
+      "24 Classes a Month",
+      "30 Minute Session",
     ],
     ctaText: "Get Started",
     ctaHref: "/free-trial",
@@ -112,7 +119,7 @@ export default function Pricing() {
 
         {/* Pricing Cards Grid */}
         <motion.div
-          className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8 items-center"
+          className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-center"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
