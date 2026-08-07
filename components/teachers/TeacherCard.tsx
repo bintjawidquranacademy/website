@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star, Clock } from "lucide-react";
+import { Star, Clock, Globe } from "lucide-react";
 import type { Teacher } from "@/lib/types";
 
 type TeacherCardProps = {
@@ -46,6 +46,12 @@ export default function TeacherCard({ teacher, index = 0 }: TeacherCardProps) {
             <Clock className="h-3.5 w-3.5 text-[#C9A227]" />
             <span>{teacher.experienceYears}+ years experience</span>
           </div>
+          {teacher.languages && teacher.languages.length > 0 && (
+            <div className="flex items-center gap-2 text-[0.82rem] text-[#56655e]">
+              <Globe className="h-3.5 w-3.5 text-[#C9A227]" />
+              <span>{teacher.languages.join(", ")}</span>
+            </div>
+          )}
           <div className="flex items-center gap-2 text-[0.82rem] text-[#56655e]">
             <Star className="h-3.5 w-3.5 fill-[#C9A227] text-[#C9A227]" />
             <span className="font-medium text-[#30453c]">Highly Rated</span>

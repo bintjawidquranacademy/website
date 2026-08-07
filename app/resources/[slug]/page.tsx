@@ -7,6 +7,7 @@ import Reveal from "@/components/ui/Reveal";
 import { getResourceBySlug, resourceList } from "@/lib/content";
 import { isPdfResource } from "@/lib/resource-links";
 import { buildMetadata } from "@/lib/site";
+import ResourceSections from "@/components/resources/ResourceSections";
 
 type ResourceDetailPageProps = {
   params: Promise<{ slug: string }>;
@@ -37,6 +38,7 @@ export default async function ResourceDetailPage({ params }: ResourceDetailPageP
 
   const isPdf = isPdfResource(resource.fileUrl);
   const hasGallery = !!resource.galleryUrls?.length;
+  const hasSections = !!resource.sections?.length;
   const isImageResource = !isPdf && /\.(png|jpe?g|webp|svg)$/i.test(resource.fileUrl);
   const pageCount = resource.galleryUrls?.length ?? (isPdf ? 1 : 0);
 
@@ -71,6 +73,24 @@ export default async function ResourceDetailPage({ params }: ResourceDetailPageP
             title={resource.title}
           />
         </>
+      ) : hasSections ? (
+        <div className="space-y-8 pb-14 md:pb-20">
+          <PageHero
+            description={resource.description}
+            eyebrow={resource.category}
+            title={resource.title}
+            actions={
+              <Button href="/resources" variant="secondary">
+                Back To Library
+              </Button>
+            }
+            stats={[
+              { value: `${resource.sections?.length || 0}`, label: "Paras arranged for structured reading." },
+              { value: "Guided", label: "Ideal for daily recitation, revision, and home practice." },
+            ]}
+          />
+          <ResourceSections sections={resource.sections!} resourceTitle={resource.title} />
+        </div>
       ) : hasGallery ? (
         <div className="space-y-8 pb-14 md:pb-20">
           <PageHero

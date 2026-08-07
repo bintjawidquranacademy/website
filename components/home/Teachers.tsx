@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { ArrowRight, Award, GraduationCap } from "lucide-react";
+import { ArrowRight, Award, GraduationCap, Globe } from "lucide-react";
 import Link from "next/link";
 
 import { teacherList } from "@/lib/content";
@@ -103,6 +103,14 @@ export default function Teachers() {
                     <GraduationCap className="w-4 h-4 text-[#0F4C3A] shrink-0 mt-0.5" />
                     <span className="line-clamp-1 font-medium">{teacher.specialization}</span>
                   </div>
+
+                  {/* Languages */}
+                  {teacher.languages && teacher.languages.length > 0 && (
+                    <div className="mt-2 flex items-start gap-2 text-xs text-[#5A6E65]">
+                      <Globe className="w-4 h-4 text-[#0F4C3A] shrink-0 mt-0.5" />
+                      <span className="line-clamp-1 font-medium">{teacher.languages.join(", ")}</span>
+                    </div>
+                  )}
                 </div>
               </div>
 

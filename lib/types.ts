@@ -6,6 +6,10 @@ export interface Resource {
   image: string;
   fileUrl: string;
   galleryUrls?: string[];
+  sections?: {
+    title: string;
+    galleryUrls: string[];
+  }[];
   featured: boolean;
 }
 
