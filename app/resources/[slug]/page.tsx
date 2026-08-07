@@ -74,21 +74,7 @@ export default async function ResourceDetailPage({ params }: ResourceDetailPageP
           />
         </>
       ) : hasSections ? (
-        <div className="space-y-8 pb-14 md:pb-20">
-          <PageHero
-            description={resource.description}
-            eyebrow={resource.category}
-            title={resource.title}
-            actions={
-              <Button href="/resources" variant="secondary">
-                Back To Library
-              </Button>
-            }
-            stats={[
-              { value: `${resource.sections?.length || 0}`, label: "Paras arranged for structured reading." },
-              { value: "Guided", label: "Ideal for daily recitation, revision, and home practice." },
-            ]}
-          />
+        <div className="pb-14 md:pb-20">
           <ResourceSections sections={resource.sections!} resourceTitle={resource.title} />
         </div>
       ) : hasGallery ? (
