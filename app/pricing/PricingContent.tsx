@@ -17,7 +17,6 @@ import {
   Clock,
   ClipboardList,
   Users,
-  Users,
   BookOpen,
 } from "lucide-react";
 import { siteConfig } from "@/lib/site";
