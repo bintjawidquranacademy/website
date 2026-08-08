@@ -12,6 +12,9 @@ import {
   Headset,
   Clock,
   BookOpen,
+  Instagram,
+  Facebook,
+  Music
 } from "lucide-react";
 
 import { siteConfig } from "@/lib/site";
@@ -135,57 +138,90 @@ export default function ContactContent() {
 
       {/* ====== CONTACT SECTION ====== */}
       <section className="page-shell mt-24 lg:mt-32">
-        <div className="mx-auto max-w-3xl">
-          {/* Contact Details */}
+        <div className="mx-auto max-w-6xl">
           <motion.div 
-            className="flex flex-col space-y-8"
+            className="grid gap-8 lg:grid-cols-2 lg:gap-12"
             {...fadeUp(0.1)}
           >
-            <div className="flex-1 rounded-[32px] border border-[var(--line)] bg-white/70 p-8 shadow-[0_20px_50px_rgba(18,40,30,0.04)] backdrop-blur-xl md:p-10 lg:p-12">
-              <h2 className="mb-4 font-display text-3xl text-[var(--ink)]">
-                Contact details
-              </h2>
-              {/* Gold divider */}
-              <div className="mb-10 flex w-16 items-center gap-1">
-                <div className="h-px flex-1 bg-gradient-to-r from-[#C9A227] to-transparent" />
-                <div className="h-1 w-1 rotate-45 border border-[#C9A227]" />
+            {/* Contact Details */}
+            <div className="flex flex-col space-y-8">
+              <div className="flex-1 rounded-[32px] border border-[var(--line)] bg-white/70 p-8 shadow-[0_20px_50px_rgba(18,40,30,0.04)] backdrop-blur-xl md:p-10 lg:p-12">
+                <h2 className="mb-4 font-display text-3xl text-[var(--ink)]">
+                  Contact details
+                </h2>
+                {/* Gold divider */}
+                <div className="mb-10 flex w-16 items-center gap-1">
+                  <div className="h-px flex-1 bg-gradient-to-r from-[#C9A227] to-transparent" />
+                  <div className="h-1 w-1 rotate-45 border border-[#C9A227]" />
+                </div>
+
+                <div className="flex flex-col">
+                  {[
+                    { icon: Mail, label: siteConfig.email, href: `mailto:${siteConfig.email}` },
+                    { icon: Phone, label: siteConfig.phone, href: `tel:${siteConfig.phone}` },
+                    { icon: MessageCircle, label: "WhatsApp support", href: siteConfig.whatsapp },
+                    { icon: Globe, label: "Online: Serving families across the UK, North America, and beyond." },
+                  ].map((item, i) => (
+                    <div key={i} className="group relative flex items-center gap-5 border-b border-[var(--line)] py-6 last:border-0 hover:bg-[#0F3D2E]/[0.02] -mx-6 px-6 transition-colors rounded-xl">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-[var(--line)] transition-transform duration-300 group-hover:scale-110 group-hover:ring-[#C9A227]/40">
+                        <item.icon className="h-5 w-5 text-[#0F3D2E] transition-colors group-hover:text-[#C9A227]" />
+                      </div>
+                      {item.href ? (
+                        <a href={item.href} className="text-[0.95rem] leading-relaxed text-[var(--muted)] transition-colors hover:text-[#C9A227]">
+                          {item.label}
+                        </a>
+                      ) : (
+                        <span className="text-[0.95rem] leading-relaxed text-[var(--muted)]">
+                          {item.label}
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <div className="flex flex-col">
-                {[
-                  { icon: Mail, label: siteConfig.email, href: `mailto:${siteConfig.email}` },
-                  { icon: Phone, label: siteConfig.phone, href: `tel:${siteConfig.phone}` },
-                  { icon: MessageCircle, label: "WhatsApp support", href: siteConfig.whatsapp },
-                  { icon: Globe, label: "Online: Serving families across the UK, North America, and beyond." },
-                ].map((item, i) => (
-                  <div key={i} className="group relative flex items-center gap-5 border-b border-[var(--line)] py-6 last:border-0 hover:bg-[#0F3D2E]/[0.02] -mx-6 px-6 transition-colors rounded-xl">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-[var(--line)] transition-transform duration-300 group-hover:scale-110 group-hover:ring-[#C9A227]/40">
-                      <item.icon className="h-5 w-5 text-[#0F3D2E] transition-colors group-hover:text-[#C9A227]" />
-                    </div>
-                    {item.href ? (
-                      <a href={item.href} className="text-[0.95rem] leading-relaxed text-[var(--muted)] transition-colors hover:text-[#C9A227]">
-                        {item.label}
-                      </a>
-                    ) : (
-                      <span className="text-[0.95rem] leading-relaxed text-[var(--muted)]">
-                        {item.label}
-                      </span>
-                    )}
+              {/* Support Card */}
+              <div className="relative overflow-hidden rounded-[24px] border border-[#C9A227]/30 bg-[#FDFBF7] p-8 shadow-sm">
+                <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#C9A227]/10 blur-2xl" />
+                <div className="flex items-center gap-5">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#0F3D2E] text-[#C9A227] shadow-md">
+                    <Clock className="h-5 w-5" />
                   </div>
-                ))}
+                  <div>
+                    <h4 className="font-display text-lg text-[var(--ink)]">Need immediate assistance?</h4>
+                    <p className="mt-1 text-[0.85rem] text-[var(--muted)]">Available on WhatsApp every day.</p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Support Card */}
-            <div className="relative overflow-hidden rounded-[24px] border border-[#C9A227]/30 bg-[#FDFBF7] p-8 shadow-sm">
-              <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#C9A227]/10 blur-2xl" />
-              <div className="flex items-center gap-5">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#0F3D2E] text-[#C9A227] shadow-md">
-                  <Clock className="h-5 w-5" />
+            {/* Social Media Details */}
+            <div className="flex flex-col space-y-8">
+              <div className="flex-1 rounded-[32px] border border-[var(--line)] bg-white/70 p-8 shadow-[0_20px_50px_rgba(18,40,30,0.04)] backdrop-blur-xl md:p-10 lg:p-12">
+                <h2 className="mb-4 font-display text-3xl text-[var(--ink)]">
+                  Socials
+                </h2>
+                {/* Gold divider */}
+                <div className="mb-10 flex w-16 items-center gap-1">
+                  <div className="h-px flex-1 bg-gradient-to-r from-[#C9A227] to-transparent" />
+                  <div className="h-1 w-1 rotate-45 border border-[#C9A227]" />
                 </div>
-                <div>
-                  <h4 className="font-display text-lg text-[var(--ink)]">Need immediate assistance?</h4>
-                  <p className="mt-1 text-[0.85rem] text-[var(--muted)]">Available on WhatsApp every day.</p>
+
+                <div className="flex flex-col">
+                  {[
+                    { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/bintjawid?utm_source=qr&igsh=N2FvMG82cDVuMGtk" },
+                    { icon: Music, label: "TikTok", href: "https://tiktok.com/@bintjawidquranacademy" },
+                    { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/share/198mz8jn3P/" },
+                  ].map((item, i) => (
+                    <div key={i} className="group relative flex items-center gap-5 border-b border-[var(--line)] py-6 last:border-0 hover:bg-[#0F3D2E]/[0.02] -mx-6 px-6 transition-colors rounded-xl">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-[var(--line)] transition-transform duration-300 group-hover:scale-110 group-hover:ring-[#C9A227]/40">
+                        <item.icon className="h-5 w-5 text-[#0F3D2E] transition-colors group-hover:text-[#C9A227]" />
+                      </div>
+                      <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-[0.95rem] leading-relaxed text-[var(--muted)] transition-colors hover:text-[#C9A227]">
+                        {item.label}
+                      </a>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
