@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -13,7 +13,7 @@ import {
   Clock,
   BookOpen,
 } from "lucide-react";
-import ContactForm from "@/components/forms/ContactForm";
+
 import { siteConfig } from "@/lib/site";
 
 /* ------------------------------------------------------------------ */
@@ -39,7 +39,6 @@ const slideIn = (direction: "left" | "right", delay = 0) => ({
 /* ------------------------------------------------------------------ */
 
 export default function ContactContent() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   return (
     <div className="overflow-hidden pb-16 md:pb-24">
@@ -136,45 +135,11 @@ export default function ContactContent() {
 
       {/* ====== CONTACT SECTION ====== */}
       <section className="page-shell mt-24 lg:mt-32">
-        <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:gap-16">
-          
-          {/* Left - Contact Form */}
-          {isSubmitted ? (
-            <motion.div 
-              className="w-full overflow-hidden rounded-[32px] shadow-[0_20px_60px_rgba(15,77,58,0.15)] bg-white"
-              {...fadeUp(0.1)}
-            >
-              <Image
-                src="/after form.png"
-                alt="Thank you – our team will contact you shortly"
-                width={1200}
-                height={600}
-                className="w-full h-auto object-cover"
-                priority
-              />
-            </motion.div>
-          ) : (
-            <motion.div 
-              className="rounded-[32px] border border-[var(--line)] bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,252,245,0.7))] p-8 shadow-[0_20px_50px_rgba(18,40,30,0.06)] backdrop-blur-xl md:p-10 lg:p-12"
-              {...fadeUp(0.1)}
-            >
-              <h2 className="mb-4 font-display text-3xl text-[var(--ink)]">
-                Send us a message
-              </h2>
-              {/* Gold divider */}
-              <div className="mb-8 flex w-16 items-center gap-1">
-                <div className="h-px flex-1 bg-gradient-to-r from-[#C9A227] to-transparent" />
-                <div className="h-1 w-1 rotate-45 border border-[#C9A227]" />
-              </div>
-
-              <ContactForm onSuccess={() => setIsSubmitted(true)} />
-            </motion.div>
-          )}
-
-          {/* Right - Contact Details */}
+        <div className="mx-auto max-w-3xl">
+          {/* Contact Details */}
           <motion.div 
             className="flex flex-col space-y-8"
-            {...fadeUp(0.2)}
+            {...fadeUp(0.1)}
           >
             <div className="flex-1 rounded-[32px] border border-[var(--line)] bg-white/70 p-8 shadow-[0_20px_50px_rgba(18,40,30,0.04)] backdrop-blur-xl md:p-10 lg:p-12">
               <h2 className="mb-4 font-display text-3xl text-[var(--ink)]">
