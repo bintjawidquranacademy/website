@@ -3,7 +3,7 @@ import { courseList, resourceList } from "@/lib/content";
 import { siteConfig } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/about", "/courses", "/teachers", "/pricing", "/resources", "/contact", "/free-trial"];
+  const staticRoutes = ["", "/about", "/courses", "/teachers", "/pricing", "/resources", "/contact"];
 
   const staticEntries = staticRoutes.map((route) => ({
     url: `${siteConfig.url}${route}`,

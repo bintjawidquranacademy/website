@@ -8,6 +8,7 @@ import {
   Globe2,
   GraduationCap,
   Headphones,
+  MessageCircle,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -120,10 +121,12 @@ export default function Hero() {
                 </Link>
                 <Link
                   className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full border border-[#a8aca7] bg-white/35 px-8 text-[0.96rem] font-medium text-[#0a321e] backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:bg-white/65"
-                  href="/free-trial"
+                  href={siteConfig.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <CirclePlay className="h-5 w-5" />
-                  Start Free Trial
+                  <MessageCircle className="h-5 w-5" />
+                  WhatsApp
                 </Link>
               </div>
             </div>

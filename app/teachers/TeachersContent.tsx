@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import TeacherCard from "@/components/teachers/TeacherCard";
 import type { Teacher } from "@/lib/types";
+import { siteConfig } from "@/lib/site";
 
 /* ------------------------------------------------------------------ */
 /*  Animation helpers                                                  */
@@ -387,7 +388,7 @@ export default function TeachersContent({ teachers }: TeachersContentProps) {
                   Find the Perfect Quran Teacher Today
                 </h2>
                 <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-[rgba(255,255,255,0.7)]">
-                  Book a free trial lesson and meet a teacher before enrolling.
+                  Contact us on WhatsApp to meet a teacher before enrolling.
                   Experience the quality of personalized Quran education with no
                   obligation.
                 </p>
@@ -398,20 +399,19 @@ export default function TeachersContent({ teachers }: TeachersContentProps) {
                 className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row"
               >
                 <Link
-                  href="/free-trial"
-                  className="inline-flex min-h-13 items-center justify-center gap-2 rounded-full bg-[#C9A227] px-8 text-[0.82rem] font-semibold uppercase tracking-[0.18em] !text-[#13281f] shadow-[0_12px_36px_rgba(200,155,60,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d4ad35] hover:shadow-[0_16px_48px_rgba(200,155,60,0.4)]"
-                >
-                  <BookOpen className="h-4 w-4" />
-                  <span>Book Free Trial</span>
-                </Link>
-                <Link
-                  href="https://wa.me/923259839004"
+                  href={siteConfig.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-13 items-center justify-center gap-2 rounded-full border border-[rgba(255,255,255,0.25)] bg-[rgba(255,255,255,0.08)] px-8 text-[0.82rem] font-semibold uppercase tracking-[0.18em] !text-white backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-[rgba(255,255,255,0.4)] hover:bg-[rgba(255,255,255,0.14)]"
+                  className="inline-flex min-h-13 items-center justify-center gap-2 rounded-full bg-[#C9A227] px-8 text-[0.82rem] font-semibold uppercase tracking-[0.18em] !text-[#13281f] shadow-[0_12px_36px_rgba(200,155,60,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d4ad35] hover:shadow-[0_16px_48px_rgba(200,155,60,0.4)]"
                 >
                   <MessageCircle className="h-4 w-4" />
-                  <span>Talk to an Advisor</span>
+                  <span>WhatsApp</span>
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex min-h-13 items-center justify-center gap-2 rounded-full border border-[rgba(255,255,255,0.25)] bg-[rgba(255,255,255,0.08)] px-8 text-[0.82rem] font-semibold uppercase tracking-[0.18em] !text-white backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-[rgba(255,255,255,0.4)] hover:bg-[rgba(255,255,255,0.14)]"
+                >
+                  <span>Contact Us</span>
                 </Link>
               </motion.div>
             </div>

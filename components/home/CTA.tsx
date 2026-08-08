@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
+import { siteConfig } from "@/lib/site";
 
 export default function CTA() {
   return (
@@ -58,16 +59,18 @@ export default function CTA() {
             </h2>
 
             <p className="mt-4 text-sm sm:text-base text-gray-200 font-sans max-w-xl mx-auto leading-relaxed">
-              Join thousands of students worldwide and start learning with confidence! Book your free 1-on-1 trial class today.
+              Join thousands of students worldwide and start learning with confidence! Contact us on WhatsApp to get started.
             </p>
 
             {/* Buttons matching reference */}
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/free-trial"
+                href={siteConfig.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#D4AF37] text-[#0F4C3A] font-bold text-sm shadow-xl shadow-[#D4AF37]/20 hover:bg-[#e2bf58] hover:scale-105 transition-all duration-300 group"
               >
-                <span>Start Your Free Trial</span>
+                <span>WhatsApp</span>
                 <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
               </Link>
 

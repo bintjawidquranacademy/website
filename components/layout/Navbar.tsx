@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { BookOpen } from "lucide-react";
+import { BookOpen, MessageCircle } from "lucide-react";
 import MobileMenu from "@/components/layout/MobileMenu";
 import { siteConfig } from "@/lib/site";
 
@@ -68,10 +68,12 @@ export default function Navbar() {
           <div className="hidden items-center gap-3 md:flex">
             <Link
               className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#14523f] bg-[linear-gradient(180deg,#0f5b45,#0d4635)] px-6 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-white shadow-[0_12px_28px_rgba(15,77,58,0.18)] transition duration-300 hover:-translate-y-0.5"
-              href="/free-trial"
+              href={siteConfig.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <BookOpen className="mr-2 h-3.5 w-3.5 text-[#C9A227]" />
-              <span className="!text-white">Start Free Trial</span>
+              <MessageCircle className="mr-2 h-3.5 w-3.5 text-[#C9A227]" />
+              <span className="!text-white">WhatsApp</span>
             </Link>
           </div>
 

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Button from "@/components/ui/Button";
+import { siteConfig } from "@/lib/site";
 
 const navItems = [
   { href: "/about", label: "About" },
@@ -50,8 +51,8 @@ export default function MobileMenu() {
                   {item.label}
                 </Link>
               ))}
-              <Button href="/free-trial" onClick={() => setOpen(false)}>
-                Start Free Trial
+              <Button href={siteConfig.whatsapp} onClick={() => setOpen(false)} target="_blank" rel="noopener noreferrer">
+                WhatsApp
               </Button>
             </div>
           </motion.div>

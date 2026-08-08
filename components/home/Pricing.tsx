@@ -3,6 +3,7 @@
 import { motion, type Variants } from "framer-motion";
 import { Check } from "lucide-react";
 import Link from "next/link";
+import { siteConfig } from "@/lib/site";
 
 interface Plan {
   id: string;
@@ -26,8 +27,8 @@ const plans: Plan[] = [
       "12 Classes a Month",
       "30 Minute Session",
     ],
-    ctaText: "Get Started",
-    ctaHref: "/free-trial",
+    ctaText: "WhatsApp",
+    ctaHref: siteConfig.whatsapp,
   },
   {
     id: "4day",
@@ -39,8 +40,8 @@ const plans: Plan[] = [
       "16 Classes a Month",
       "30 Minute Session",
     ],
-    ctaText: "Get Started",
-    ctaHref: "/free-trial",
+    ctaText: "WhatsApp",
+    ctaHref: siteConfig.whatsapp,
   },
   {
     id: "5day",
@@ -53,8 +54,8 @@ const plans: Plan[] = [
       "20 Classes a Month",
       "30 Minute Session",
     ],
-    ctaText: "Get Started",
-    ctaHref: "/free-trial",
+    ctaText: "WhatsApp",
+    ctaHref: siteConfig.whatsapp,
   },
   {
     id: "6day",
@@ -66,8 +67,8 @@ const plans: Plan[] = [
       "24 Classes a Month",
       "30 Minute Session",
     ],
-    ctaText: "Get Started",
-    ctaHref: "/free-trial",
+    ctaText: "WhatsApp",
+    ctaHref: siteConfig.whatsapp,
   },
 ];
 
@@ -175,6 +176,8 @@ export default function Pricing() {
               <div className="p-8 pt-0">
                 <Link
                   href={plan.ctaHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`group w-full inline-flex items-center justify-center py-3.5 px-6 rounded-full text-sm font-semibold transition-all duration-300 ${
                     plan.popular
                       ? "bg-[#0F4C3A] !text-white hover:bg-[#135A46] shadow-lg shadow-[#0F4C3A]/20"

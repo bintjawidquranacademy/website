@@ -15,6 +15,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import type { Course } from "@/lib/types";
+import { siteConfig } from "@/lib/site";
 
 /* ------------------------------------------------------------------ */
 /*  Animation helpers                                                  */
@@ -166,11 +167,13 @@ export default function CourseDetailContent({ course }: { course: Course }) {
                   
                   {/* CTA Button */}
                   <Link
-                    href="/free-trial"
+                    href={siteConfig.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group flex w-full items-center justify-between rounded-full bg-[#082E23] px-6 py-4 text-[0.75rem] font-bold uppercase tracking-[0.15em] text-white shadow-lg transition-all duration-300 hover:bg-[#0F3D2E] hover:shadow-xl"
                   >
-                    <span className="text-white">Book Trial</span>
-                    <ArrowRight className="h-4 w-4 text-[#C9A227] transition-transform duration-300 group-hover:translate-x-1" />
+                    <span className="text-white">WhatsApp</span>
+                    <MessageCircle className="h-4 w-4 text-[#C9A227] transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                 </div>
               </div>
@@ -271,25 +274,24 @@ export default function CourseDetailContent({ course }: { course: Course }) {
                 </h2>
                 
                 <p className="mb-8 text-[0.95rem] leading-[1.8] text-gray-200">
-                  Book a trial lesson to meet a teacher, discuss the learner&apos;s needs, and receive a recommended plan.
+                  Contact us on WhatsApp to meet a teacher, discuss the learner&apos;s needs, and receive a recommended plan.
                 </p>
 
                 <div className="flex w-full flex-col justify-center gap-4 sm:flex-row">
                   <Link
-                    href="/free-trial"
-                    className="group flex flex-1 items-center justify-center gap-3 rounded-full bg-[#D4AF37] px-6 py-4 text-[0.8rem] font-bold uppercase tracking-[0.15em] text-[#0F4C3A] shadow-xl shadow-[#D4AF37]/20 transition-all duration-300 hover:-translate-y-1 hover:bg-[#e2bf58] hover:shadow-[0_15px_40px_rgba(212,175,55,0.4)]"
-                  >
-                    <BookOpen className="h-4 w-4" />
-                    <span>Book Trial</span>
-                  </Link>
-                  <Link
-                    href="https://wa.me/923259839004"
+                    href={siteConfig.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex flex-1 items-center justify-center gap-3 rounded-full bg-white/10 border border-white/20 px-6 py-4 text-[0.8rem] font-bold uppercase tracking-[0.15em] text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg"
+                    className="group flex flex-1 items-center justify-center gap-3 rounded-full bg-[#D4AF37] px-6 py-4 text-[0.8rem] font-bold uppercase tracking-[0.15em] text-[#0F4C3A] shadow-xl shadow-[#D4AF37]/20 transition-all duration-300 hover:-translate-y-1 hover:bg-[#e2bf58] hover:shadow-[0_15px_40px_rgba(212,175,55,0.4)]"
                   >
                     <MessageCircle className="h-4 w-4" />
-                    <span>Talk to Advisor</span>
+                    <span>WhatsApp</span>
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="group flex flex-1 items-center justify-center gap-3 rounded-full bg-white/10 border border-white/20 px-6 py-4 text-[0.8rem] font-bold uppercase tracking-[0.15em] text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg"
+                  >
+                    <span>Contact Us</span>
                   </Link>
                 </div>
               </div>

@@ -14,6 +14,7 @@ import {
 import ResourceQuickLinks from "@/components/resources/ResourceQuickLinks";
 import ResourceExplorer from "@/components/resources/ResourceExplorer";
 import type { Resource } from "@/lib/types";
+import { siteConfig } from "@/lib/site";
 
 /* ------------------------------------------------------------------ */
 /*  Animation helpers                                                  */
@@ -193,20 +194,19 @@ export default function ResourcesContent({ resources, categories }: ResourcesCon
 
             <div className="flex w-full flex-col justify-center gap-4 sm:flex-row sm:w-auto">
               <Link
-                href="/free-trial"
-                className="group flex items-center justify-center gap-3 rounded-full bg-[#D4AF37] px-10 py-5 text-[0.8rem] font-bold uppercase tracking-[0.15em] text-[#0F4C3A] shadow-xl shadow-[#D4AF37]/20 transition-all duration-300 hover:-translate-y-1 hover:bg-[#e2bf58] hover:shadow-[0_15px_40px_rgba(212,175,55,0.4)]"
-              >
-                <BookOpen className="h-4 w-4" />
-                <span>Book Free Trial</span>
-              </Link>
-              <Link
-                href="https://wa.me/923259839004"
+                href={siteConfig.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-center gap-3 rounded-full border border-white/20 bg-white/10 px-10 py-5 text-[0.8rem] font-bold uppercase tracking-[0.15em] text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg"
+                className="group flex items-center justify-center gap-3 rounded-full bg-[#D4AF37] px-10 py-5 text-[0.8rem] font-bold uppercase tracking-[0.15em] text-[#0F4C3A] shadow-xl shadow-[#D4AF37]/20 transition-all duration-300 hover:-translate-y-1 hover:bg-[#e2bf58] hover:shadow-[0_15px_40px_rgba(212,175,55,0.4)]"
               >
                 <MessageCircle className="h-4 w-4" />
-                <span>Talk to an Advisor</span>
+                <span>WhatsApp</span>
+              </Link>
+              <Link
+                href="/contact"
+                className="group flex items-center justify-center gap-3 rounded-full border border-white/20 bg-white/10 px-10 py-5 text-[0.8rem] font-bold uppercase tracking-[0.15em] text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg"
+              >
+                <span>Contact Us</span>
               </Link>
             </div>
           </div>

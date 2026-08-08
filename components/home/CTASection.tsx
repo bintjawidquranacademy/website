@@ -1,5 +1,6 @@
 import Button from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
+import { siteConfig } from "@/lib/site";
 
 export default function CTASection() {
   return (
@@ -10,7 +11,7 @@ export default function CTASection() {
           <div className="absolute bottom-0 left-0 h-48 w-48 rounded-full bg-[rgba(15,77,58,0.08)] blur-3xl" />
           <div className="relative grid gap-8 md:grid-cols-[1.15fr_auto] md:items-center">
             <div className="space-y-5">
-              <p className="section-label">Begin With A Trial</p>
+              <p className="section-label">Start Your Journey</p>
               <h2 className="font-display text-balance text-5xl leading-[0.95] md:text-6xl">
                 Start with a guided session and feel the difference from the first class.
               </h2>
@@ -20,7 +21,7 @@ export default function CTASection() {
               </p>
             </div>
             <div className="flex flex-col gap-3">
-              <Button href="/free-trial">Book Free Trial</Button>
+              <Button href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</Button>
               <Button href="/contact" variant="secondary">
                 Speak To Our Team
               </Button>
