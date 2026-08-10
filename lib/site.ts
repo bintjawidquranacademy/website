@@ -18,8 +18,9 @@ export const siteConfig = {
   email: "bintjawidquranacademy@gmail.com",
   phone: "+92 325 9839004",
   whatsapp: "https://wa.me/923259839004",
-  instagram: null,
-  facebook: null,
+  instagram: "https://www.instagram.com/bintjawid?utm_source=qr&igsh=N2FvMG82cDVuMGtk",
+  facebook: "https://www.facebook.com/share/198mz8jn3P/",
+  tiktok: "https://www.tiktok.com/@bintjawidquranacademy",
 } as const;
 
 export function buildMetadata(title: string, description: string): Metadata {
