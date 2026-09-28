@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Palette, Search, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Palette, Search, X, ChevronLeft, ChevronRight, LayoutList, LayoutGrid, ZoomIn } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
 /*  Animation helpers                                                  */
@@ -122,6 +122,7 @@ export default function ActivitiesContent() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [viewMode, setViewMode] = useState<"vertical" | "grid">("vertical");
 
   const filtered = activities.filter((a) => {
     const matchesCategory =
@@ -209,14 +210,43 @@ export default function ActivitiesContent() {
             ))}
           </div>
 
-          {/* Results count */}
-          <p className="mt-4 text-center text-xs tracking-wide text-[var(--muted)]">
-            Showing {filtered.length} of {activities.length} activities
-          </p>
+          {/* Controls bar: Results count + View switcher */}
+          <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 max-w-3xl mx-auto px-2">
+            <p className="text-xs sm:text-sm font-medium tracking-wide text-[var(--muted)]">
+              Showing <span className="font-semibold text-[var(--ink)]">{filtered.length}</span> of {activities.length} activities
+            </p>
+
+            <div className="inline-flex rounded-full bg-white/80 p-1 border border-[var(--line)] shadow-sm">
+              <button
+                onClick={() => setViewMode("vertical")}
+                className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all duration-300 ${
+                  viewMode === "vertical"
+                    ? "bg-[#0F3D2E] text-white shadow-sm"
+                    : "text-[var(--muted)] hover:text-[var(--ink)]"
+                }`}
+                title="Vertical Reading View (one image below another, like resource pages)"
+              >
+                <LayoutList className="h-3.5 w-3.5" />
+                <span>Reading Flow</span>
+              </button>
+              <button
+                onClick={() => setViewMode("grid")}
+                className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all duration-300 ${
+                  viewMode === "grid"
+                    ? "bg-[#0F3D2E] text-white shadow-sm"
+                    : "text-[var(--muted)] hover:text-[var(--ink)]"
+                }`}
+                title="Grid View"
+              >
+                <LayoutGrid className="h-3.5 w-3.5" />
+                <span>Grid View</span>
+              </button>
+            </div>
+          </div>
         </motion.div>
       </section>
 
-      {/* ====== GALLERY GRID ====== */}
+      {/* ====== GALLERY (READING FLOW OR GRID) ====== */}
       <section className="page-shell mt-10 md:mt-14">
         {filtered.length === 0 ? (
           <motion.div
@@ -231,7 +261,60 @@ export default function ActivitiesContent() {
               Try adjusting your search or filter.
             </p>
           </motion.div>
+        ) : viewMode === "vertical" ? (
+          /* Vertical Reading Flow (like Resources pages: one image then below pages) */
+          <div className="mx-auto max-w-3xl space-y-8">
+            {filtered.map((activity, i) => (
+              <motion.div
+                key={activity.src}
+                className="overflow-hidden rounded-[24px] border border-[var(--line)] bg-white shadow-[0_18px_40px_rgba(16,28,21,0.08)] transition-all duration-300 hover:shadow-[0_24px_50px_rgba(16,28,21,0.12)]"
+                {...fadeUp(Math.min(0.04 * (i % 4), 0.16))}
+              >
+                {/* Header bar */}
+                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[var(--line)]/60 bg-[#FAF8F3] px-6 py-4">
+                  <div>
+                    <span className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-[#C9A227] block">
+                      {activity.category}
+                    </span>
+                    <h2 className="font-display text-xl sm:text-2xl text-[var(--ink)] mt-0.5">
+                      {activity.title}
+                    </h2>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-semibold text-[var(--muted)] bg-white px-3 py-1 rounded-full border border-[var(--line)]">
+                      {i + 1} / {filtered.length}
+                    </span>
+                    <button
+                      onClick={() => openLightbox(i)}
+                      className="flex h-8 w-8 items-center justify-center rounded-full bg-white border border-[var(--line)] text-[var(--muted)] hover:text-[#0F3D2E] hover:border-[#0F3D2E]/30 transition-all shadow-sm"
+                      title="View Fullscreen"
+                      aria-label="View Fullscreen"
+                    >
+                      <ZoomIn className="h-4 w-4" />
+                    </button>
+                  </div>
+                </div>
+
+                {/* Full natural height image */}
+                <div
+                  className="cursor-pointer bg-[#fbf9f4] p-3 sm:p-5 flex justify-center group"
+                  onClick={() => openLightbox(i)}
+                >
+                  <Image
+                    src={activity.src}
+                    alt={activity.title}
+                    width={1000}
+                    height={1300}
+                    className="h-auto w-full max-w-full rounded-[16px] object-contain transition-transform duration-500 group-hover:scale-[1.01]"
+                    priority={i < 2}
+                    loading={i < 2 ? "eager" : "lazy"}
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
         ) : (
+          /* Grid View */
           <div className="grid gap-4 sm:grid-cols-2 md:gap-5 lg:grid-cols-3 xl:grid-cols-4">
             {filtered.map((activity, i) => (
               <motion.div
