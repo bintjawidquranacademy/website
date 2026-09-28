@@ -17,9 +17,9 @@ import {
   Clock,
   ClipboardList,
   Users,
-  BookOpen,
 } from "lucide-react";
 import { siteConfig } from "@/lib/site";
+import { pricingPlans } from "@/data/pricing";
 
 /* ------------------------------------------------------------------ */
 /*  Animation helpers                                                  */
@@ -39,49 +39,6 @@ const slideIn = (direction: "left" | "right", delay = 0) => ({
   transition: { duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] as const },
 });
 
-/* ------------------------------------------------------------------ */
-/*  Data                                                               */
-/* ------------------------------------------------------------------ */
-
-const plans = [
-  {
-    name: "3 Day",
-    price: "£48.20/month",
-    features: [
-      "3 Days a Week",
-      "12 Classes a Month",
-      "30 Minute Session",
-    ]
-  },
-  {
-    name: "4 Day",
-    price: "£53.40/month",
-    features: [
-      "4 Days a Week",
-      "16 Classes a Month",
-      "30 Minute Session",
-    ]
-  },
-  {
-    name: "5 Day",
-    price: "£58.50/month",
-    features: [
-      "5 Days a Week",
-      "20 Classes a Month",
-      "30 Minute Session",
-    ],
-    isPopular: true
-  },
-  {
-    name: "6 Day",
-    price: "£62.30/month",
-    features: [
-      "6 Days a Week",
-      "24 Classes a Month",
-      "30 Minute Session",
-    ]
-  },
-];
 
 const faqs = [
   {
@@ -112,6 +69,12 @@ const faqs = [
 
 export default function PricingContent() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [activeFilter, setActiveFilter] = useState<"all" | "30min" | "60min">("all");
+
+  const filteredPlans = pricingPlans.filter((plan) => {
+    if (activeFilter === "all") return true;
+    return plan.category === activeFilter;
+  });
 
   return (
     <div className="overflow-hidden pb-16 md:pb-24">
@@ -207,47 +170,87 @@ export default function PricingContent() {
       </section>
 
       {/* ====== PRICING CARDS ====== */}
-      <section className="page-shell mt-24 lg:mt-32">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-center">
-          {plans.map((plan, i) => {
-            const isPopular = plan.isPopular;
+      <section className="page-shell mt-20 lg:mt-28">
+        {/* Filter Tabs */}
+        <div className="flex justify-center mb-12">
+          <div className="inline-flex flex-wrap justify-center rounded-full bg-white p-1.5 border border-[#EADFCB] shadow-sm gap-1">
+            <button
+              onClick={() => setActiveFilter("all")}
+              className={`rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition-all duration-300 ${
+                activeFilter === "all"
+                  ? "bg-[#0F4C3A] text-white shadow-sm"
+                  : "text-[#5A6E65] hover:text-[#0F4C3A]"
+              }`}
+            >
+              All Plans (9)
+            </button>
+            <button
+              onClick={() => setActiveFilter("30min")}
+              className={`rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition-all duration-300 ${
+                activeFilter === "30min"
+                  ? "bg-[#0F4C3A] text-white shadow-sm"
+                  : "text-[#5A6E65] hover:text-[#0F4C3A]"
+              }`}
+            >
+              30 Min Sessions
+            </button>
+            <button
+              onClick={() => setActiveFilter("60min")}
+              className={`rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition-all duration-300 ${
+                activeFilter === "60min"
+                  ? "bg-[#0F4C3A] text-white shadow-sm"
+                  : "text-[#5A6E65] hover:text-[#0F4C3A]"
+              }`}
+            >
+              1 Hour Sessions (x2)
+            </button>
+          </div>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
+          {filteredPlans.map((plan, i) => {
+            const whatsappUrl = `${siteConfig.whatsapp}?text=${encodeURIComponent(
+              `Salam, I would like to enroll in ${plan.name} (${plan.price}/month).`
+            )}`;
+
             return (
               <motion.article
-                key={plan.name}
-                {...fadeUp(0.1 * i)}
-                whileHover={{ y: -10, scale: isPopular ? 1.03 : 1.02 }}
+                key={plan.id}
+                {...fadeUp(0.08 * i)}
+                whileHover={{ y: -8 }}
                 transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                className={`relative flex flex-col justify-between rounded-[24px] bg-white transition-all duration-300 ${
-                  isPopular
-                    ? "border-2 border-[#D4AF37] shadow-[0_25px_60px_rgba(15,76,58,0.18)] z-10 py-2 scale-[1.03]"
-                    : "border border-[#EADFCB] shadow-[0_15px_35px_rgba(15,76,58,0.06)] hover:shadow-[0_20px_45px_rgba(15,76,58,0.12)] hover:border-[#D4AF37]"
-                }`}
+                className="relative flex flex-col justify-between rounded-[24px] bg-white border border-[#EADFCB] shadow-[0_15px_35px_rgba(15,76,58,0.06)] hover:shadow-[0_20px_45px_rgba(15,76,58,0.12)] hover:border-[#D4AF37] transition-all duration-300"
               >
-                {/* Most Popular Badge */}
-                {isPopular && (
-                  <div className="w-full bg-[#0F4C3A] text-white text-center py-2.5 rounded-t-[20px] font-semibold text-sm tracking-wide shadow-inner">
-                    Most Popular
+                <div className="p-7 sm:p-8 flex-1 flex flex-col">
+                  {/* Badge & Title */}
+                  <div className="flex items-center justify-between gap-2">
+                    <h3 className="font-display text-2xl font-bold text-[#0F4C3A]">
+                      {plan.name}
+                    </h3>
+                    {plan.badge && (
+                      <span className="inline-block px-2.5 py-1 rounded-full text-xs font-semibold bg-[#FAF8F3] text-[#0F4C3A] border border-[#D4AF37]/50 shrink-0">
+                        {plan.badge}
+                      </span>
+                    )}
                   </div>
-                )}
-
-                <div className="p-8">
-                  {/* Plan Header */}
-                  <h3 className="font-display text-2xl font-bold text-[#0F4C3A]">
-                    {plan.name} Plan
-                  </h3>
 
                   {/* Price */}
-                  <div className="mt-4 flex items-baseline gap-1">
-                    <span className="font-display text-5xl font-extrabold text-[#0F4C3A]">
-                      {plan.price.split('/')[0]}
-                    </span>
-                    <span className="text-sm font-medium text-[#5A6E65]">
-                      /{plan.price.split('/')[1] || "month"}
+                  <div className="mt-4">
+                    <div className="flex items-baseline gap-1.5">
+                      <span className="font-display text-4xl sm:text-5xl font-extrabold text-[#0F4C3A]">
+                        {plan.price}
+                      </span>
+                      <span className="text-sm font-medium text-[#5A6E65]">
+                        {plan.billing}
+                      </span>
+                    </div>
+                    <span className="block text-xs font-medium text-[#8A9B93] mt-1">
+                      Every month
                     </span>
                   </div>
 
                   {/* Feature List */}
-                  <ul className="mt-8 space-y-4">
+                  <ul className="mt-6 space-y-3.5 flex-1">
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-3 text-sm text-[#0F4C3A] font-medium">
                         <Check className="w-4 h-4 text-[#D4AF37] shrink-0 stroke-[3]" />
@@ -258,18 +261,16 @@ export default function PricingContent() {
                 </div>
 
                 {/* Button Action */}
-                <div className="p-8 pt-0">
+                <div className="p-7 sm:p-8 pt-0">
                   <Link
-                    href={siteConfig.whatsapp}
+                    href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`group w-full inline-flex items-center justify-center py-3.5 px-6 rounded-full text-sm font-semibold transition-all duration-300 ${
-                      isPopular
-                        ? "bg-[#0F4C3A] !text-white hover:bg-[#135A46] shadow-lg shadow-[#0F4C3A]/20"
-                        : "bg-[#FAF8F3] text-[#0F4C3A] border border-[#D4AF37]/50 hover:bg-[#0F4C3A] hover:!text-white hover:border-[#0F4C3A]"
-                    }`}
+                    className="group w-full inline-flex items-center justify-center py-3.5 px-6 rounded-full text-sm font-semibold transition-all duration-300 bg-[#FAF8F3] text-[#0F4C3A] border border-[#D4AF37]/50 hover:bg-[#0F4C3A] hover:!text-white hover:border-[#0F4C3A]"
                   >
-                    <span className={isPopular ? "!text-white" : "group-hover:!text-white"}>WhatsApp</span>
+                    <span className="group-hover:!text-white">
+                      WhatsApp
+                    </span>
                   </Link>
                 </div>
               </motion.article>
